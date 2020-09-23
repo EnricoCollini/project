@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.validation.constraints.NotNull;
+import javax.xml.*;
 
 @Entity
 public class Itinerario {
@@ -25,6 +26,7 @@ public class Itinerario {
 	private Float endlongitude;
 	private String description;
 	private byte[] image;
+	private String gpx;
 	//TODO: add gpx file;
 	
 	
@@ -150,6 +152,15 @@ public class Itinerario {
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+
+	@Column(name="GPX")
+	public String getGpx() {
+		return gpx;
+	}
+
+	public void setGpx(String gpx) {
+		this.gpx = gpx;
 	}
 	
 }
