@@ -9,20 +9,22 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.validation.constraints.NotNull;
-import static model.AreaNaturaleTypology.*;
+
+import model.StrutturaRicettivaTypology.*;
 
 @Entity
-public class AreaNaturale{
-
+public class StrutturaRicettiva {
 	private UUID uuid;
 	private String name;
 	private String city;
 	private String province;
 	private Float latitude;
 	private Float longitude;
-	private String description;
-	private AreaNaturaleTypology areanaturaletypology;
-	private byte[] image;
+	private String phonenumber;
+	private  String address;
+	private String email;
+	private StrutturaRicettivaTypology strutturaricettivatipology;
+
 	
 	@Id
 	@GeneratedValue
@@ -31,10 +33,11 @@ public class AreaNaturale{
 	public UUID getUuid() {
 		return uuid;
 	}
-	
+
 	public void setUuid(UUID uuid) {
 		this.uuid = uuid;
 	}
+
 	
 	@Column(name="NAME")
 	public String getName() {
@@ -45,7 +48,7 @@ public class AreaNaturale{
 		this.name = name;
 	}
 
-
+	
 	@Column(name="CITY")
 	public String getCity() {
 		return city;
@@ -54,7 +57,7 @@ public class AreaNaturale{
 	public void setCity(String city) {
 		this.city = city;
 	}
-
+	
 
 	@Column(name="PROVINCE")
 	public String getProvince() {
@@ -64,8 +67,8 @@ public class AreaNaturale{
 	public void setProvince(String province) {
 		this.province = province;
 	}
-
 	
+
 	@Column(name="LATITUDE")
 	public Float getLatitude() {
 		return latitude;
@@ -86,34 +89,43 @@ public class AreaNaturale{
 	}
 
 
-	@Column(name="DESCRIPTION")
-	public String getDescription() {
-		return description;
+	@Column(name="PHONENUMBER")
+	public String getPhonenumber() {
+		return phonenumber;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+
+
+	@Column(name="ADDRESS")
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 
-	@Column(name="AREANATURALETYPOLOGY")
+	@Column(name="EMAIL")
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+		
+	
+	@Column(name="STRUTTURARICETTIVATYPOLOGY")
 	@Enumerated(EnumType.STRING)
-	public AreaNaturaleTypology getAreanaturaletypology() {
-		return areanaturaletypology;
+	public StrutturaRicettivaTypology getStrutturaricettivatipology() {
+		return strutturaricettivatipology;
 	}
 
-	public void setAreanaturaletypology(AreaNaturaleTypology areanaturaletypology) {
-		this.areanaturaletypology = areanaturaletypology;
+	public void setStrutturaricettivatipology(StrutturaRicettivaTypology strutturaricettivatipology) {
+		this.strutturaricettivatipology = strutturaricettivatipology;
 	}
-
-    @Lob
-    @Column(name="IMAGE")
-	public byte[] getImage() {
-		return image;
-	}
-
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
 }
