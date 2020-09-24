@@ -4,14 +4,17 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
+import dao.RistoroDao;
 import dao.RistoroDaoBean;
 import model.AreaNaturale;
 import model.Ristoro;
 
 @Stateless
 public class RistoroController {
-	private RistoroDaoBean ristorodao;
+	@Inject
+	private RistoroDao ristorodao;
 	
 	public Ristoro getRistoro(UUID uuid) {
 		return(ristorodao.getRistoro(uuid));

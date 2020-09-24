@@ -4,14 +4,17 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
+import dao.ItinerarioDao;
 import dao.ItinerarioDaoBean;
 import model.Itinerario;
 import model.StrutturaRicettiva;
 
 @Stateless
 public class ItinerarioController {
-	private ItinerarioDaoBean itinerariodao;
+	@Inject
+	private ItinerarioDao itinerariodao;
 	
 	public Itinerario getItinerario(UUID uuid) {
 		return(itinerariodao.getItinerario(uuid));

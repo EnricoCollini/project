@@ -46,6 +46,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
 	  	
 	@POST
+	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(StrutturaRicettiva strutturaricettiva) {

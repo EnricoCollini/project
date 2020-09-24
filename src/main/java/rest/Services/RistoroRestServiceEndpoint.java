@@ -20,7 +20,7 @@ import controller.RistoroController;
 
 @Path("/ristoro")
 public class RistoroRestServiceEndpoint {
-	//@Inject
+	@Inject
 	private RistoroController ristorocontroller;
 	
 	@GET
@@ -46,6 +46,7 @@ public class RistoroRestServiceEndpoint {
 	}
 	  	
 	@POST
+	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Ristoro	ristoro) {

@@ -4,14 +4,18 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
+import dao.StrutturaRicettivaDao;
 import dao.StrutturaRicettivaDaoBean;
 import model.Ristoro;
 import model.StrutturaRicettiva;
 
 @Stateless
 public class StrutturaRicettivaController {
-	private StrutturaRicettivaDaoBean strutturaricettivadao;
+	
+	@Inject
+	private StrutturaRicettivaDao strutturaricettivadao;
 	
 	public StrutturaRicettiva getStrutturaRicettiva(UUID uuid) {
 		return(strutturaricettivadao.getStrutturaRicettiva(uuid));
