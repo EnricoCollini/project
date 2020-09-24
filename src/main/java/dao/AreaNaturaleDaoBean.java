@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,7 +17,7 @@ public class AreaNaturaleDaoBean implements AreaNaturaleDao {
 	public AreaNaturaleDaoBean() {}
 	
 	@Override
-	public AreaNaturale getAreaNaturale(String uuid) {
+	public AreaNaturale getAreaNaturale(UUID uuid) {
 		return entitymanager.find(AreaNaturale.class,uuid);
 	}
 

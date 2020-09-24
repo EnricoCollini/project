@@ -5,8 +5,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-import model.AreaNaturale;
 import model.Itinerario;
 
 public class ItinerarioDaoBean implements ItinerarioDao {
