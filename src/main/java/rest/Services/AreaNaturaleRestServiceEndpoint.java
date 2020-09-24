@@ -1,5 +1,6 @@
 package rest.Services;
 
+import java.io.Console;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -21,15 +22,21 @@ import controller.AreaNaturaleController;
 
 @Path("/areanaturale")
 public class AreaNaturaleRestServiceEndpoint {
-	//@Inject
+	
+	@Inject
 	private AreaNaturaleController areanaturalecontroller;
+	
 	
 	//test hello world example
 	@GET
+	@Path("/create")
 	@Produces({MediaType.TEXT_PLAIN})
-	public String sayHello() {
-		return("hello");
+	public UUID sayHello() {
+		UUID test = UUID.randomUUID();
+		return(test);
 	}
+
+	
 	
     @GET
     @Path("/uuid/{uuid}")
@@ -48,7 +55,7 @@ public class AreaNaturaleRestServiceEndpoint {
   	}
   	
   	@POST
-  	@Path("/areanaturale/")
+  	@Path("/create")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(AreaNaturale areanaturale) {

@@ -2,14 +2,20 @@ package controller;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AreaNaturaleDao;
 import dao.AreaNaturaleDaoBean;
 import model.AreaNaturale;
 
+@Stateless
 public class AreaNaturaleController {
+
+	
 	@Inject
-	private AreaNaturaleDaoBean areanaturaledao;
+	private AreaNaturaleDao areanaturaledao;
+	
 	
 	public AreaNaturale getAreaNaturale(UUID uuid) {
 		return areanaturaledao.getAreaNaturale(uuid);

@@ -3,11 +3,13 @@ package dao;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import model.Itinerario;
 
+@Stateless
 public class ItinerarioDaoBean implements ItinerarioDao {
 	@PersistenceContext(unitName="project")
 	protected EntityManager entitymanager;

@@ -3,10 +3,13 @@ package controller;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ejb.Stateless;
+
 import dao.RistoroDaoBean;
 import model.AreaNaturale;
 import model.Ristoro;
 
+@Stateless
 public class RistoroController {
 	private RistoroDaoBean ristorodao;
 	

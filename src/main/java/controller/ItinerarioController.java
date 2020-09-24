@@ -3,10 +3,13 @@ package controller;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ejb.Stateless;
+
 import dao.ItinerarioDaoBean;
 import model.Itinerario;
 import model.StrutturaRicettiva;
 
+@Stateless
 public class ItinerarioController {
 	private ItinerarioDaoBean itinerariodao;
 	

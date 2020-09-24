@@ -3,10 +3,13 @@ package controller;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ejb.Stateless;
+
 import dao.StrutturaRicettivaDaoBean;
 import model.Ristoro;
 import model.StrutturaRicettiva;
 
+@Stateless
 public class StrutturaRicettivaController {
 	private StrutturaRicettivaDaoBean strutturaricettivadao;
 	

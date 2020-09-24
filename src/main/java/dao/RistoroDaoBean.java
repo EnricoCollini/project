@@ -3,12 +3,14 @@ package dao;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import model.Ristoro;
 
+@Stateless
 public class RistoroDaoBean implements RistoroDao {
 	@PersistenceContext(unitName="project")
 	protected EntityManager entitymanager;

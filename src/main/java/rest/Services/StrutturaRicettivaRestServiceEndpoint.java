@@ -2,6 +2,7 @@ package rest.Services;
 
 import java.util.UUID;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,7 +20,7 @@ import model.StrutturaRicettiva;
 
 @Path("strutturaricettiva")
 public class StrutturaRicettivaRestServiceEndpoint {
-	//@Inject
+	@Inject
 	private StrutturaRicettivaController strutturaricettivacontroller;
 	
 	@GET

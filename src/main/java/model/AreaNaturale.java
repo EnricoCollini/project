@@ -24,6 +24,8 @@ public class AreaNaturale{
 	private AreaNaturaleTypology areanaturaletypology;
 	private byte[] image;
 	
+	public AreaNaturale() {}
+	
 	@Id
 	@GeneratedValue
 	@Column(name="ID", nullable = false)
