@@ -2,10 +2,13 @@ package controller;
 import java.util.List;
 import java.util.UUID;
 
+import javax.inject.Inject;
+
 import dao.AreaNaturaleDaoBean;
 import model.AreaNaturale;
 
 public class AreaNaturaleController {
+	@Inject
 	private AreaNaturaleDaoBean areanaturaledao;
 	
 	public AreaNaturale getAreaNaturale(UUID uuid) {
@@ -16,8 +19,7 @@ public class AreaNaturaleController {
 		areanaturaledao.createAreaNaturale(areanaturale);
 	}
 	
-	public void updateAreaNaturale(AreaNaturale areanaturale) {
-		UUID uuid = areanaturale.getUuid();
+	public void updateAreaNaturale(UUID uuid,AreaNaturale areanaturale) {
 		AreaNaturale updateareanaturale = areanaturaledao.getAreaNaturale(uuid);
     	updateareanaturale.setName(areanaturale.getName());
     	updateareanaturale.setCity(areanaturale.getCity());

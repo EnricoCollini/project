@@ -1,23 +1,38 @@
 package controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import dao.StrutturaRicettivaDaoBean;
+import model.Ristoro;
 import model.StrutturaRicettiva;
 
 public class StrutturaRicettivaController {
 	private StrutturaRicettivaDaoBean strutturaricettivadao;
 	
-	public StrutturaRicettiva getStrutturaRicettiva(String uuid) {
+	public StrutturaRicettiva getStrutturaRicettiva(UUID uuid) {
 		return(strutturaricettivadao.getStrutturaRicettiva(uuid));
 	}
 	public void createStrutturaRicettiva(StrutturaRicettiva strutturaricettiva) {
 		strutturaricettivadao.createStrutturaRicettiva(strutturaricettiva);
 	}
-	public void updateStrutturaRicettiva(StrutturaRicettiva strutturaricettiva) {
-		strutturaricettivadao.updateStrutturaRicettiva(strutturaricettiva);
+	public void updateStrutturaRicettiva(UUID uuid, StrutturaRicettiva strutturaricettiva) {
+		StrutturaRicettiva updatestrutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(uuid);
+		
+		updatestrutturaricettiva.setAddress(strutturaricettiva.getAddress());
+		updatestrutturaricettiva.setCity(strutturaricettiva.getCity());
+		updatestrutturaricettiva.setEmail(strutturaricettiva.getEmail());
+		updatestrutturaricettiva.setLatitude(strutturaricettiva.getLatitude());
+		updatestrutturaricettiva.setLongitude(strutturaricettiva.getLongitude());
+		updatestrutturaricettiva.setName(strutturaricettiva.getName());
+		updatestrutturaricettiva.setPhonenumber(strutturaricettiva.getPhonenumber());
+		updatestrutturaricettiva.setProvince(strutturaricettiva.getProvince());
+		updatestrutturaricettiva.setStrutturaricettivatipology(strutturaricettiva.getStrutturaricettivatipology());		
+		strutturaricettivadao.updateStrutturaRicettiva(updatestrutturaricettiva);
 	}
-	public void deleteStrutturaRicettiva(StrutturaRicettiva strutturaricettiva) {
+	
+	public void deleteStrutturaRicettiva(UUID uuid) {
+		StrutturaRicettiva strutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(uuid);
 		strutturaricettivadao.deleteStrutturaRicettiva(strutturaricettiva);
 	}
 	public List<StrutturaRicettiva> getAllStruttureRicettive(){

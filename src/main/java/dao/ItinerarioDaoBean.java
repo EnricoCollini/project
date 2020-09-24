@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,7 +15,7 @@ public class ItinerarioDaoBean implements ItinerarioDao {
 	public ItinerarioDaoBean() {};
 	
 	@Override
-	public Itinerario getItinerario(String uuid) {
+	public Itinerario getItinerario(UUID uuid) {
 		return entitymanager.find(Itinerario.class, uuid);
 	}
 

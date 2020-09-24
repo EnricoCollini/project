@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +16,7 @@ public class RistoroDaoBean implements RistoroDao {
 	public RistoroDaoBean() {};
 	
 	@Override
-	public Ristoro getRistoro(String uuid) {
+	public Ristoro getRistoro(UUID uuid) {
 		return entitymanager.find(Ristoro.class, uuid);
 	}
 

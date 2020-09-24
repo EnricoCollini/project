@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +16,7 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 	public StrutturaRicettivaDaoBean() {};
 	
 	@Override
-	public StrutturaRicettiva getStrutturaRicettiva(String uuid) {
+	public StrutturaRicettiva getStrutturaRicettiva(UUID uuid) {
 		return entitymanager.find(StrutturaRicettiva.class, uuid);
 	}
 
@@ -32,7 +33,7 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 	}
 
 	@Override
-	public void deleteStrutturaRicettiva(StrutturaRicettiva strutturaricettiva) {
+	public void deleteStrutturaRicettiva(StrutturaRicettiva strutturaricettiva ) {
 		if(!entitymanager.contains(strutturaricettiva)) {
 			strutturaricettiva = entitymanager.merge(strutturaricettiva);
 		}

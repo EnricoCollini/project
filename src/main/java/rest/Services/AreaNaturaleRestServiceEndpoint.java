@@ -18,7 +18,7 @@ import model.AreaNaturale;
 import controller.AreaNaturaleController;
 
 public class AreaNaturaleRestServiceEndpoint {
-	@Inject
+	//@Inject
 	private AreaNaturaleController areanaturalecontroller;
 	
 	//test hello world example
@@ -54,8 +54,8 @@ public class AreaNaturaleRestServiceEndpoint {
   	
   	@PUT
     @Path("/uuid/{uuid}")
-    public Response update(@PathParam("uuid") String uuid, AreaNaturale areanaturale) {
-    	areanaturalecontroller.updateAreaNaturale(areanaturale);
+    public Response update(@PathParam("uuid") UUID uuid, AreaNaturale areanaturale) {
+    	areanaturalecontroller.updateAreaNaturale(uuid ,areanaturale);
         return Response.ok().build();
     }
   	
