@@ -14,22 +14,25 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.json.JSONObject;
+
 import model.AreaNaturale;
 import controller.AreaNaturaleController;
 
+@Path("/areanaturale")
 public class AreaNaturaleRestServiceEndpoint {
 	//@Inject
 	private AreaNaturaleController areanaturalecontroller;
 	
 	//test hello world example
 	@GET
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.TEXT_PLAIN})
 	public String sayHello() {
-		return "Hello World";
+		return("hello");
 	}
 	
     @GET
-    @Path("/areanaturale/uuid/{uuid}")
+    @Path("/uuid/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response getAreaNaturale(@PathParam("uuid") UUID uuid) {
@@ -38,7 +41,7 @@ public class AreaNaturaleRestServiceEndpoint {
     }
     
   	@GET
-  	@Path("/areanaturale/areenaturali")
+  	@Path("/areenaturali")
   	@Produces({MediaType.APPLICATION_JSON})
   	public Response getAreeNaturali() {
   		return Response.ok(areanaturalecontroller.getAllAreeNaturalii()).build();
@@ -54,7 +57,7 @@ public class AreaNaturaleRestServiceEndpoint {
     }
   	
   	@PUT
-    @Path("/areanaturale/uuid/{uuid}")
+    @Path("/uuid/{uuid}")
     public Response update(@PathParam("uuid") UUID uuid, AreaNaturale areanaturale) {
     	areanaturalecontroller.updateAreaNaturale(uuid ,areanaturale);
         return Response.ok().build();
@@ -62,7 +65,7 @@ public class AreaNaturaleRestServiceEndpoint {
   	
     
     @PUT
-    @Path("/areanaturale/uuid/{uuid}")
+    @Path("/uuid/{uuid}")
     public Response delete(@PathParam("uuid") UUID uuid) {
     	areanaturalecontroller.deleteAreaNaturale(uuid);
         return Response.ok().build();

@@ -17,6 +17,8 @@ import controller.StrutturaRicettivaController;
 import model.Itinerario;
 import model.StrutturaRicettiva;
 
+
+@Path("/itinerario")
 public class ItinerarioRestServiceEndpoint {
 	//@Inject
 	private ItinerarioController itinerariocontroller;
@@ -29,7 +31,7 @@ public class ItinerarioRestServiceEndpoint {
 	}
 			
 	@GET
-	@Path("/itinerario/uuid/{uuid}")
+	@Path("/uuid/{uuid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getItinerario(@PathParam("uuid") UUID uuid) {
@@ -38,14 +40,13 @@ public class ItinerarioRestServiceEndpoint {
 	}
 	    
 	@GET
-	@Path("itinerario/itinerari")
+	@Path("/itinerari")
 	@Produces({MediaType.APPLICATION_JSON})
 	 	public Response getItineari() {
 		return Response.ok(itinerariocontroller.getAllItinerari()).build();
 	}
 	  	
 	@POST
-	@Path("/itinerario/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Itinerario itinerario) {
@@ -54,7 +55,7 @@ public class ItinerarioRestServiceEndpoint {
 	   }
 	  	
 		@PUT
-	   @Path("/itinerario/uuid/{uuid}")
+	   @Path("/uuid/{uuid}")
 	   public Response update(@PathParam("uuid") UUID uuid, Itinerario itinerario) {
 			itinerariocontroller.updateItinerario(uuid, itinerario);
 			return Response.ok().build();
@@ -62,7 +63,7 @@ public class ItinerarioRestServiceEndpoint {
 	  	
 		    
 		@PUT
-		@Path("/itinerario/uuid/{uuid}")
+		@Path("/uuid/{uuid}")
 		public Response delete(@PathParam("uuid") UUID uuid) {
 			itinerariocontroller.deleteItinerario(uuid);
 		    return Response.ok().build();

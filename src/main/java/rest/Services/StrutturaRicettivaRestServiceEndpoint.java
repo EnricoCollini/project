@@ -17,6 +17,7 @@ import controller.StrutturaRicettivaController;
 import model.Ristoro;
 import model.StrutturaRicettiva;
 
+@Path("strutturaricettiva")
 public class StrutturaRicettivaRestServiceEndpoint {
 	//@Inject
 	private StrutturaRicettivaController strutturaricettivacontroller;
@@ -28,7 +29,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
 		
 	@GET
-	@Path("/strutturericettive/uuid/{uuid}")
+	@Path("/uuid/{uuid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getStrutturaRicettiva(@PathParam("uuid") UUID uuid) {
@@ -37,14 +38,13 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
 	    
 	@GET
-	@Path("/strutturericettive/strutturericettive")
+	@Path("/strutturericettive")
 	@Produces({MediaType.APPLICATION_JSON})
   	public Response getStruttureRicettive() {
 		return Response.ok(strutturaricettivacontroller.getAllStruttureRicettive()).build();
 	}
 	  	
 	@POST
-	@Path("/strutturericettive/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(StrutturaRicettiva strutturaricettiva) {
@@ -61,7 +61,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	  	
 	    
 	@PUT
-	@Path("/strutturericettive/uuid/{uuid}")
+	@Path("/uuid/{uuid}")
 	public Response delete(@PathParam("uuid") UUID uuid) {
 		strutturaricettivacontroller.deleteStrutturaRicettiva(uuid);
 	    return Response.ok().build();
