@@ -29,7 +29,7 @@ public class RistoroRestServiceEndpoint {
 	}
 		
 	@GET
-	@Path("/uuid/{uuid}")
+	@Path("/ristoro/uuid/{uuid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getRistoro(@PathParam("uuid") UUID uuid) {
@@ -38,13 +38,14 @@ public class RistoroRestServiceEndpoint {
 	}
 	    
 	@GET
-	@Path("/ristori")
+	@Path("/ristoro/ristori")
 	@Produces({MediaType.APPLICATION_JSON})
   	public Response getRistori() {
 		return Response.ok(ristorocontroller.getAllRistori()).build();
 	}
 	  	
 	@POST
+	@Path("/ristoro/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Ristoro	ristoro) {
@@ -53,7 +54,7 @@ public class RistoroRestServiceEndpoint {
     }
 	  	
  	@PUT
-    @Path("/uuid/{uuid}")
+    @Path("/ristoro/uuid/{uuid}")
     public Response update(@PathParam("uuid") UUID uuid, Ristoro ristoro) {
  		ristorocontroller.updateRistoro(uuid,ristoro);
         return Response.ok().build();
@@ -61,7 +62,7 @@ public class RistoroRestServiceEndpoint {
 	  	
 	    
 	@PUT
-	@Path("/uuid/{uuid}")
+	@Path("/ristoro/uuid/{uuid}")
 	public Response delete(@PathParam("uuid") UUID uuid) {
 	 	ristorocontroller.deleteRistoro(uuid);
 	    return Response.ok().build();

@@ -29,7 +29,7 @@ public class AreaNaturaleRestServiceEndpoint {
 	}
 	
     @GET
-    @Path("/uuid/{uuid}")
+    @Path("/areanaturale/uuid/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response getAreaNaturale(@PathParam("uuid") UUID uuid) {
@@ -38,13 +38,14 @@ public class AreaNaturaleRestServiceEndpoint {
     }
     
   	@GET
-  	@Path("/areenaturali")
+  	@Path("/areanaturale/areenaturali")
   	@Produces({MediaType.APPLICATION_JSON})
   	public Response getAreeNaturali() {
   		return Response.ok(areanaturalecontroller.getAllAreeNaturalii()).build();
   	}
   	
   	@POST
+  	@Path("/areanaturale/")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(AreaNaturale areanaturale) {
@@ -53,7 +54,7 @@ public class AreaNaturaleRestServiceEndpoint {
     }
   	
   	@PUT
-    @Path("/uuid/{uuid}")
+    @Path("/areanaturale/uuid/{uuid}")
     public Response update(@PathParam("uuid") UUID uuid, AreaNaturale areanaturale) {
     	areanaturalecontroller.updateAreaNaturale(uuid ,areanaturale);
         return Response.ok().build();
@@ -61,7 +62,7 @@ public class AreaNaturaleRestServiceEndpoint {
   	
     
     @PUT
-    @Path("/uuid/{uuid}")
+    @Path("/areanaturale/uuid/{uuid}")
     public Response delete(@PathParam("uuid") UUID uuid) {
     	areanaturalecontroller.deleteAreaNaturale(uuid);
         return Response.ok().build();

@@ -28,7 +28,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
 		
 	@GET
-	@Path("/uuid/{uuid}")
+	@Path("/strutturericettive/uuid/{uuid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getStrutturaRicettiva(@PathParam("uuid") UUID uuid) {
@@ -37,13 +37,14 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
 	    
 	@GET
-	@Path("/strutturericettive")
+	@Path("/strutturericettive/strutturericettive")
 	@Produces({MediaType.APPLICATION_JSON})
   	public Response getStruttureRicettive() {
 		return Response.ok(strutturaricettivacontroller.getAllStruttureRicettive()).build();
 	}
 	  	
 	@POST
+	@Path("/strutturericettive/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(StrutturaRicettiva strutturaricettiva) {
@@ -60,7 +61,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	  	
 	    
 	@PUT
-	@Path("/uuid/{uuid}")
+	@Path("/strutturericettive/uuid/{uuid}")
 	public Response delete(@PathParam("uuid") UUID uuid) {
 		strutturaricettivacontroller.deleteStrutturaRicettiva(uuid);
 	    return Response.ok().build();

@@ -29,7 +29,7 @@ public class ItinerarioRestServiceEndpoint {
 	}
 			
 	@GET
-	@Path("/uuid/{uuid}")
+	@Path("/itinerario/uuid/{uuid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getItinerario(@PathParam("uuid") UUID uuid) {
@@ -38,13 +38,14 @@ public class ItinerarioRestServiceEndpoint {
 	}
 	    
 	@GET
-	@Path("/itinerari")
+	@Path("itinerario/itinerari")
 	@Produces({MediaType.APPLICATION_JSON})
 	 	public Response getItineari() {
 		return Response.ok(itinerariocontroller.getAllItinerari()).build();
 	}
 	  	
 	@POST
+	@Path("/itinerario/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Itinerario itinerario) {
@@ -53,7 +54,7 @@ public class ItinerarioRestServiceEndpoint {
 	   }
 	  	
 		@PUT
-	   @Path("/uuid/{uuid}")
+	   @Path("/itinerario/uuid/{uuid}")
 	   public Response update(@PathParam("uuid") UUID uuid, Itinerario itinerario) {
 			itinerariocontroller.updateItinerario(uuid, itinerario);
 			return Response.ok().build();
@@ -61,7 +62,7 @@ public class ItinerarioRestServiceEndpoint {
 	  	
 		    
 		@PUT
-		@Path("/uuid/{uuid}")
+		@Path("/itinerario/uuid/{uuid}")
 		public Response delete(@PathParam("uuid") UUID uuid) {
 			itinerariocontroller.deleteItinerario(uuid);
 		    return Response.ok().build();
