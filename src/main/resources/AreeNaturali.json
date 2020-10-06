@@ -1,0 +1,47 @@
+[
+	{
+		"name": "Valle dell'Inferno e Bandella",
+		"description": "La riserva naturale della Valle dell'Inferno e Bandella è un'area naturale protetta della Toscana situata lungo il tratto valdarnese dell'Arno. La riserva si sviluppa nel bacino della centrale idroelettrica ENEL di Levane. La riserva è caratterizzata da un tratto del Fiume Arno che scorre placidamente nella Valle dell'Inferno, con profondità che varia tra 5 e 15 metri e l'Ansa di Bandella, una zona palustre, formatasi nel fondovalle del Torrente Ascione e ai bordi del lago originato dalla costruzione della diga al finire degli anni '50 per la produzione di energia elettrica.Questa zona successivamente si è popolata della fauna e della flora tipica delle zone umide e l'abbondante presenza di pesci, anfibi, invertebrati ha attirato specie di uccelli che hanno scelto quest'oasi per la loro riproduzione. Ma allo stesso tempo però il lago non ha cancellato la flora e la fauna tipica che caratterizzavano la valle. ",
+		"city": "Laterina",
+		"province": "Arezzo",
+		"latitude": 43.510108, 
+		"longitude": 11.658500,
+		"areanaturaletypology": "RISERVANATURALEPROVINCIALE"
+	},
+	{
+		"name": "Padule di Fucechio",
+		"description": "Il Padule di Fucecchio è la più estesa palude interna italiana. Ampia circa 2 000 ettari, si sviluppa tra le province di Firenze, Prato, Pistoia, Lucca e Pisa. La grande maggioranza dell'area è situata nella zona della Valdinievole, quindi a sud dell'Appennino Pistoiese, fra il Montalbano e le Colline delle Cerbaie; presenta come unico emissario il canale Usciana. ",
+		"city": "Fucecchio",
+		"province": "Firenze",
+		"latitude": 43.800489, 
+		"longitude": 10.800427,
+		"areanaturaletypology": "RISERVANATURALEPROVINCIALE"
+	},
+	{
+		"name": "Diaccia Botrona",
+		"description": "La riserva naturale Diaccia Botrona è un'area naturale protetta caratterizzata da un ambiente tipico palustre che occupa una parte della pianura tra la città di Grosseto e la località costiera di Castiglione della Pescaia. ",
+		"city": "Castiglione della Pescaia",
+		"province": "Grosseto",
+		"latitude": 42.768948, 
+		"longitude": 10.899277,
+		"areanaturaletypology": "RISERVANATURALEPROVINCIALE"
+	},
+	{
+		"name": "Macchia della Magona",
+		"description": "L'area naturale protetta di interesse locale Macchia della Magona è un'area naturale protetta della regione Toscana istituita nel 1995. Occupa una superficie di 1.636 ha nella provincia di Livorno. La Macchia della Magona una distesa di macchia mediterranea alle spalle di Bibbona. E' costituita da splendidi boschi che si estendono per ben 1635 ettari, classificata biotopo dal Consiglio Nazionale delle Ricerche, costituita dalla tipica macchia mediterranea, da fiori profumati e numerosi funghi di diverse specie.",
+		"city": "Bibboba",
+		"province": "Livorno",
+		"latitude": 43.217884, 
+		"longitude": 10.610357,
+		"areanaturaletypology": "AREANATURALEPROTETTADIINTERESSELOCALE"
+	},
+	{
+		"name": "Valle delle Fonti",
+		"description": "La Valle delle Fonti, anche conosciuta come Via delle Fonti, è una area naturale protetta di interesse locale in provincia di Pisa. Essa è situata nel contesto dei Monti Pisani. Il nome deriva dalla presenza, lungo il percorso che sale al monte, di numerose fonti dalle quali si dirama l'antico acquedotto mediceo pisano. ",
+		"city": "",
+		"province": "",
+		"latitude": 43.748231, 
+		"longitude": 10.462774,
+		"areanaturaletypology": "AREANATURALEPROTETTADIINTERESSELOCALE"
+	}
+]
