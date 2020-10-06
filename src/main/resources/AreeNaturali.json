@@ -38,8 +38,8 @@
 	{
 		"name": "Valle delle Fonti",
 		"description": "La Valle delle Fonti, anche conosciuta come Via delle Fonti, è una area naturale protetta di interesse locale in provincia di Pisa. Essa è situata nel contesto dei Monti Pisani. Il nome deriva dalla presenza, lungo il percorso che sale al monte, di numerose fonti dalle quali si dirama l'antico acquedotto mediceo pisano. ",
-		"city": "",
-		"province": "",
+		"city": "Asciano",
+		"province": "Pisa",
 		"latitude": 43.748231, 
 		"longitude": 10.462774,
 		"areanaturaletypology": "AREANATURALEPROTETTADIINTERESSELOCALE"
