@@ -15,6 +15,8 @@ import javax.ejb.Startup;
 
 import javax.ejb.Stateless;
 import dao.AreaNaturaleDao;
+import model.AreaNaturale;
+import model.AreaNaturaleTypology;
 
 import java.io.*;
 import java.util.*;
@@ -27,6 +29,7 @@ import java.io.*;
 import java.util.*;
 
 import com.google.gson.*;
+import com.mysql.cj.jdbc.Clob;
 
 
 @Startup
@@ -52,14 +55,53 @@ public class Initializer {
 		JsonElement[] areenaturaliArrayJsonElement = g.fromJson(areenaturali, JsonElement[].class);
 		for(JsonElement areanaturaleJsonElement : areenaturaliArrayJsonElement) {
 			JsonObject areanaturaleJsonObject = areanaturaleJsonElement.getAsJsonObject();
-			String nome = areanaturaleJsonObject.get("name").getAsString();
-			System.out.println(nome);
+			String name = areanaturaleJsonObject.get("name").getAsString();
+			String description = areanaturaleJsonObject.get("description").getAsString();
+			String city = areanaturaleJsonObject.get("city").getAsString();
+			String province = areanaturaleJsonObject.get("province").getAsString();
+			Float latitude = areanaturaleJsonObject.get("latitude").getAsFloat();
+			Float longitude = areanaturaleJsonObject.get("longitude").getAsFloat();
+			String areanaturaletypology = areanaturaleJsonObject.get("areanaturaletypology").getAsString();
+			AreaNaturale areanaturale = new AreaNaturale();
+			areanaturale.setName(name);
+			areanaturale.setDescription(description);
+			areanaturale.setCity(city);
+			areanaturale.setProvince(province);
+			areanaturale.setLatitude(latitude);
+			areanaturale.setLongitude(longitude);
+			areanaturale.setAreanaturaletypology(this.getAreaTypology(areanaturaletypology));
+			areanaturaledao.createAreaNaturale(areanaturale);
+			System.out.println(name);
 		}
 
 	    
 	    
 	    
 	  }
+	
+	public AreaNaturaleTypology getAreaTypology(String areaTypoString) {
+		if(areaTypoString == "PARCONAZIONALE") {
+			return(AreaNaturaleTypology.PARCONAZIONALE);
+		}else
+		if(areaTypoString == "PARCOREGIONALE") {
+			return(AreaNaturaleTypology.PARCONAZIONALE);
+		}else
+		if(areaTypoString == "PARCOPROVINCIALE") {
+			return(AreaNaturaleTypology.PARCONAZIONALE);
+		}else
+		if(areaTypoString == "RISERVANATURALESTATALE") {
+			return(AreaNaturaleTypology.PARCONAZIONALE);
+		}else
+		if(areaTypoString == "RISERVANATURALEPROVINCIALE") {
+			return(AreaNaturaleTypology.PARCONAZIONALE);
+		}else
+		if(areaTypoString == "AREANATURALEPROTETTADIINTERESSELOCALE") {
+			return(AreaNaturaleTypology.PARCONAZIONALE);
+		}else {
+			return(AreaNaturaleTypology.PARCONAZIONALE);
+		}
+
+	}
 	
 	
 	

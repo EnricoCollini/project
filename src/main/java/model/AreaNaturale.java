@@ -9,6 +9,9 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.validation.constraints.NotNull;
+
+import com.mysql.cj.jdbc.Clob;
+
 import static model.AreaNaturaleTypology.*;
 
 @Entity
@@ -88,7 +91,7 @@ public class AreaNaturale{
 	}
 
 
-	@Column(name="DESCRIPTION")
+	@Column(name="DESCRIPTION",columnDefinition="VARCHAR(4000)")
 	public String getDescription() {
 		return description;
 	}
