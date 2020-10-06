@@ -49,9 +49,6 @@ public class InitializerAreeNaturali {
 			e.printStackTrace();
 		}
 
-	    String jsonString = "{ \"name\": \"Baeldung\", \"java\": true }";
-
-	    
 		JsonElement[] areenaturaliArrayJsonElement = g.fromJson(areenaturali, JsonElement[].class);
 		for(JsonElement areanaturaleJsonElement : areenaturaliArrayJsonElement) {
 			JsonObject areanaturaleJsonObject = areanaturaleJsonElement.getAsJsonObject();
