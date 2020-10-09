@@ -72,7 +72,7 @@ public class InitializerItinerari {
 	    	Float endlatitude = itinerarioJsonObject.get("endlatitude").getAsFloat();
 	    	Float endlongitude = itinerarioJsonObject.get("endlongitude").getAsFloat();
 
-	    	//String track = itinerarioJsonObject.get("track").getAsString();
+	    	String track = itinerarioJsonObject.get("track").getAsString();
 	    	
 	    	Itinerario itinerario = new Itinerario();
 	    	
@@ -86,7 +86,7 @@ public class InitializerItinerari {
 	    	itinerario.setStartlongitude(startlongitude);
 	    	itinerario.setEndlatitude(endlatitude);
 	    	itinerario.setEndlongitude(endlongitude);
-	    	//itinerario.setTrack(track);
+	    	itinerario.setTrack(track);
 	    	
 	    	
 	    	itinerariodao.createItinerario(itinerario);
