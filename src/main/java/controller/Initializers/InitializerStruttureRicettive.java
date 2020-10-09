@@ -76,7 +76,7 @@ public class InitializerStruttureRicettive {
 	    	strutturaricettiva.setStrutturaricettivatipology(this.getStrutturaTypology(strutturaricettivatipology));
 	    	
 	    	strutturericettivedao.createStrutturaRicettiva(strutturaricettiva);
-			System.out.println(name);
+			//System.out.println(name);
 	    	
 	    }
 	}

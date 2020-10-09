@@ -41,6 +41,7 @@ public class InitializerAreeNaturali {
 	
 	@PostConstruct
 	  public void init() throws FileNotFoundException {
+		//System.out.println("name");
 		Gson g = new Gson();
 	    try {
 			areenaturali =  new String(Files.readAllBytes(Paths.get("/home/enrico/eclipse-workspace/project/src/main/resources/AreeNaturali.json")));
@@ -68,7 +69,7 @@ public class InitializerAreeNaturali {
 			areanaturale.setLongitude(longitude);
 			areanaturale.setAreanaturaletypology(this.getAreaTypology(areanaturaletypology));
 			areanaturaledao.createAreaNaturale(areanaturale);
-			System.out.println(name);
+			//System.out.println(name);
 		}
 
 	    

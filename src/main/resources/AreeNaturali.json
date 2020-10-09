@@ -43,5 +43,14 @@
 		"latitude": 43.748231, 
 		"longitude": 10.462774,
 		"areanaturaletypology": "AREANATURALEPROTETTADIINTERESSELOCALE"
-	}
+	},
+	{
+		"name": "Bosco Di sargiano",
+		"description": "Il Bosco di Sargiano è stata un'area naturale protetta di interesse locale (ANPIL) della Regione Toscana dal 1998 al 2015, anno in cui sono state abrogate tutte le ANPIL[1]. Occupa una superficie di 9 ha nel comune di Arezzo.[2] Il suo territorio, che è una pertinenza del Convento di Sargiano, si estende attorno al Convento stesso e ai suoi orti, uliveti e vigneti non facenti parte dell'ANPIL. Il Bosco di Sargiano è tutelato anche come sito di interesse comunitario per la presenza di rovere (quercus petraea), qui particolarmente lussureggiante[3]. ",
+		"city": "Arezzo",
+		"province": "Arezzo",
+		"latitude": 43.432392,
+		"longitude": 11.857439,
+        "areanaturaletypology" : "PARCOREGIONALE"
+}
 ]

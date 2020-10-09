@@ -5,6 +5,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import java.util.UUID;
+
+import javax.json.Json;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Lob;
@@ -25,6 +27,7 @@ public class Itinerario {
 	private Float endlongitude;
 	private String description;
 	private byte[] image;
+	private String track;
 	//TODO: add gpx file;
 	
 	
@@ -150,6 +153,15 @@ public class Itinerario {
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+
+	@Column(name="TRACK" ,columnDefinition="VARCHAR(4000)")
+	public String getTrack() {
+		return track;
+	}
+
+	public void setTrack(String track) {
+		this.track = track;
 	}
 	
 }

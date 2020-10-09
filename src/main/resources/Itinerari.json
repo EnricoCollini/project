@@ -1,0 +1,32 @@
+[
+{
+    "id" : 1,
+    "name": "Itinerario Arezzo",
+    "description": "un itinerario nei dintorni di Arezzo",
+    "startcity": "Arezzo",
+    "startprovince" : "Arezzo",
+    "endcity": "Arezzo",
+    "endprovince" : "Arezzo",
+    "startlatitude" : 11.681495,
+    "startlongitude" : 43.41461,
+    "endlatitude" : 11.687872,
+    "endlongitude" : 43.420318,
+    "track" : "{\"type\":\"FeatureCollection\",\"bbox\":[11.681203,43.417221,11.688247,43.42037],\"features\":[{\"bbox\":[11.681203,43.417221,11.688247,43.42037],\"type\":\"Feature\",\"properties\":{\"segments\":[{\"distance\":1109.1,\"duration\":266.2,\"steps\":[{\"distance\":1109.1,\"duration\":266.2,\"type\":11,\"instruction\":\"Head east\",\"name\":\"-\",\"way_points\":[0,53]},{\"distance\":0,\"duration\":0,\"type\":10,\"instruction\":\"Arrive at your destination, on the left\",\"name\":\"-\",\"way_points\":[53,53]}]}],\"summary\":{\"distance\":1109.1,\"duration\":266.2},\"way_points\":[0,53]},\"geometry\":{\"coordinates\":[[11.681417,43.417221],[11.681557,43.417245],[11.681525,43.417362],[11.681235,43.417564],[11.681203,43.417705],[11.681246,43.417892],[11.681321,43.418009],[11.681439,43.418009],[11.681632,43.417868],[11.681857,43.418165],[11.681971,43.418263],[11.681847,43.418437],[11.681546,43.418687],[11.68146,43.418796],[11.681503,43.418889],[11.681664,43.41892],[11.681853,43.419011],[11.68204,43.419178],[11.682147,43.419396],[11.68219,43.419583],[11.682061,43.419707],[11.681965,43.419832],[11.681975,43.419972],[11.68219,43.420167],[11.682422,43.420312],[11.682662,43.420354],[11.682984,43.42037],[11.683188,43.420323],[11.683424,43.420198],[11.683574,43.420074],[11.683628,43.419996],[11.684143,43.420012],[11.684546,43.420055],[11.684793,43.420117],[11.684937,43.420105],[11.685129,43.419957],[11.685301,43.419949],[11.685473,43.419793],[11.68543,43.419692],[11.685333,43.419598],[11.685366,43.419489],[11.68558,43.419107],[11.68572,43.419006],[11.68587,43.418952],[11.686106,43.418936],[11.686492,43.418959],[11.686863,43.41873],[11.687029,43.418609],[11.687121,43.41859],[11.687243,43.418765],[11.687372,43.41885],[11.687533,43.418905],[11.687737,43.418882],[11.688247,43.419026]],\"type\":\"LineString\"}}],\"metadata\":{\"attribution\":\"openrouteservice.org | OpenStreetMap contributors\",\"service\":\"routing\",\"timestamp\":1602251535109,\"query\":{\"coordinates\":[[11.681495,43.41461],[11.687872,43.420318]],\"profile\":\"driving-car\",\"format\":\"json\"},\"engine\":{\"version\":\"6.3.0\",\"build_date\":\"2020-09-21T01:00:26Z\",\"graph_date\":\"1970-01-01T00:00:00Z\"}}}"
+    
+},
+{
+    "id" : 1,
+    "name": "Itinerario Staggia Senese",
+    "description": "un itinerario nei dintorni di Staggia Senese",
+    "startcity": "Staggia",
+    "startprovince" : "Siena",
+    "endcity": "Staggia",
+    "endprovince" : "Siena",
+    "startlatitude" : 11.181495,
+    "startlongitude" : 43.41461,
+    "endlatitude" : 11.187872,
+    "endlongitude" : 43.420318,
+    "track": "{\"type\":\"FeatureCollection\",\"bbox\":[11.180692,43.414153,11.189248,43.421279],\"features\":[{\"bbox\":[11.180692,43.414153,11.189248,43.421279],\"type\":\"Feature\",\"properties\":{\"segments\":[{\"distance\":1845,\"duration\":328.8,\"steps\":[{\"distance\":589.4,\"duration\":103,\"type\":11,\"instruction\":\"Head northeast\",\"name\":\"-\",\"way_points\":[0,18]},{\"distance\":481.2,\"duration\":115.5,\"type\":1,\"instruction\":\"Turn right\",\"name\":\"-\",\"way_points\":[18,24]},{\"distance\":419.6,\"duration\":25.2,\"type\":3,\"instruction\":\"Turn sharp right onto Via Cassia, SR2\",\"name\":\"Via Cassia, SR2\",\"way_points\":[24,28]},{\"distance\":61.2,\"duration\":14.7,\"type\":0,\"instruction\":\"Turn left onto Via Livorno\",\"name\":\"Via Livorno\",\"way_points\":[28,29]},{\"distance\":135.5,\"duration\":32.5,\"type\":1,\"instruction\":\"Turn right onto Via Lucca\",\"name\":\"Via Lucca\",\"way_points\":[29,34]},{\"distance\":158.2,\"duration\":38,\"type\":12,\"instruction\":\"Keep left onto Via Lucca\",\"name\":\"Via Lucca\",\"way_points\":[34,39]},{\"distance\":0,\"duration\":0,\"type\":10,\"instruction\":\"Arrive at Via Lucca, on the left\",\"name\":\"-\",\"way_points\":[39,39]}]}],\"summary\":{\"distance\":1845,\"duration\":328.8},\"way_points\":[0,39]},\"geometry\":{\"coordinates\":[[11.182215,43.414153],[11.182517,43.414404],[11.182593,43.414595],[11.182669,43.414881],[11.183051,43.415343],[11.183189,43.415571],[11.183253,43.415764],[11.183262,43.415912],[11.18316,43.416044],[11.183096,43.416238],[11.183066,43.416652],[11.182944,43.416877],[11.182874,43.416962],[11.18272,43.417094],[11.182256,43.417388],[11.181434,43.417968],[11.181342,43.418029],[11.180746,43.418442],[11.180692,43.418491],[11.181061,43.41893],[11.183113,43.419025],[11.18314,43.4193],[11.18318,43.419922],[11.18325,43.42099],[11.183528,43.421279],[11.18362,43.421193],[11.183834,43.421047],[11.185358,43.420218],[11.187619,43.41896],[11.188074,43.4194],[11.188491,43.419146],[11.188673,43.419099],[11.188781,43.419146],[11.188985,43.419367],[11.189239,43.419635],[11.189248,43.419692],[11.189196,43.419744],[11.188553,43.420106],[11.187879,43.420448],[11.187799,43.42035]],\"type\":\"LineString\"}}],\"metadata\":{\"attribution\":\"openrouteservice.org | OpenStreetMap contributors\",\"service\":\"routing\",\"timestamp\":1602253414574,\"query\":{\"coordinates\":[[11.181495,43.41461],[11.187872,43.420318]],\"profile\":\"driving-car\",\"format\":\"json\"},\"engine\":{\"version\":\"6.3.0\",\"build_date\":\"2020-09-21T01:00:26Z\",\"graph_date\":\"1970-01-01T00:00:00Z\"}}}"
+    
+}
+]

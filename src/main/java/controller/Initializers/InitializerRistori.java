@@ -83,7 +83,7 @@ public class InitializerRistori {
 
 	    	ristorodao.createRistoro(ristoro);
 	    	
-			System.out.println(name);
+			//System.out.println(name);
 		}
 	}
 		

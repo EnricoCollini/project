@@ -35,6 +35,7 @@ public class ItinerarioController {
 		updateitinerario.setStartlatitude(itinerario.getStartlatitude());
 		updateitinerario.setStartlongitude(itinerario.getStartlongitude());
 		updateitinerario.setStartprovince(itinerario.getStartprovince());
+		updateitinerario.setTrack(itinerario.getTrack());
 		itinerariodao.updateItinerario(updateitinerario);
 	}
 	public void deleteItinerario(UUID uuid) {
