@@ -19,8 +19,8 @@ public class AreaNaturaleDaoBean implements AreaNaturaleDao {
 	public AreaNaturaleDaoBean() {}
 	
 	@Override
-	public AreaNaturale getAreaNaturale(UUID uuid) {
-		return entitymanager.find(AreaNaturale.class,uuid);
+	public AreaNaturale getAreaNaturale(long number ) {
+		return entitymanager.find(AreaNaturale.class,number);
 	}
 
 	@Override

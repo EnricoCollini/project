@@ -17,16 +17,16 @@ public class AreaNaturaleController {
 	private AreaNaturaleDao areanaturaledao;
 	
 	
-	public AreaNaturale getAreaNaturale(UUID uuid) {
-		return areanaturaledao.getAreaNaturale(uuid);
+	public AreaNaturale getAreaNaturale(long number) {
+		return areanaturaledao.getAreaNaturale(number);
 	}
 	
 	public void createAreaNaturale(AreaNaturale areanaturale) {
 		areanaturaledao.createAreaNaturale(areanaturale);
 	}
 	
-	public void updateAreaNaturale(UUID uuid,AreaNaturale areanaturale) {
-		AreaNaturale updateareanaturale = areanaturaledao.getAreaNaturale(uuid);
+	public void updateAreaNaturale(long id,AreaNaturale areanaturale) {
+		AreaNaturale updateareanaturale = areanaturaledao.getAreaNaturale(id);
     	updateareanaturale.setName(areanaturale.getName());
     	updateareanaturale.setCity(areanaturale.getCity());
     	updateareanaturale.setDescription(areanaturale.getDescription());
@@ -38,8 +38,8 @@ public class AreaNaturaleController {
 		areanaturaledao.updateAreaNaturale(updateareanaturale);
 	}
 	
-	public void deleteAreaNaturale(UUID uuid) {
-		AreaNaturale deleteareanaturale = areanaturaledao.getAreaNaturale(uuid);
+	public void deleteAreaNaturale(long number) {
+		AreaNaturale deleteareanaturale = areanaturaledao.getAreaNaturale(number);
 		areanaturaledao.deleteAreaNaturale(deleteareanaturale);
 	}
 	

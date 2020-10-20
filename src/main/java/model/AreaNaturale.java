@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -17,7 +19,7 @@ import static model.AreaNaturaleTypology.*;
 @Entity
 public class AreaNaturale{
 
-	private UUID uuid;
+	private long id;
 	private String name;
 	private String city;
 	private String province;
@@ -33,13 +35,14 @@ public class AreaNaturale{
 	@GeneratedValue
 	@Column(name="ID", nullable = false)
 	@NotNull
-	public UUID getUuid() {
-		return uuid;
+	public long getId() {
+		return id;
 	}
-	
-	public void setUuid(UUID uuid) {
-		this.uuid = uuid;
+
+	public void setId(long id) {
+		this.id = id;
 	}
+
 	
 	@Column(name="NAME")
 	public String getName() {
@@ -120,5 +123,6 @@ public class AreaNaturale{
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
-
+	
+	
 }

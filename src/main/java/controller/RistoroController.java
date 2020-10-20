@@ -16,16 +16,16 @@ public class RistoroController {
 	@Inject
 	private RistoroDao ristorodao;
 	
-	public Ristoro getRistoro(UUID uuid) {
-		return(ristorodao.getRistoro(uuid));
+	public Ristoro getRistoro(long id) {
+		return(ristorodao.getRistoro(id));
 	}
 	
 	public void createRistoro(Ristoro ristoro) {
 		ristorodao.createRistoro(ristoro);
 	}
 	
-	public void updateRistoro(UUID uuid,Ristoro ristoro) {
-		Ristoro updateristoro =  ristorodao.getRistoro(uuid);
+	public void updateRistoro(long id,Ristoro ristoro) {
+		Ristoro updateristoro =  ristorodao.getRistoro(id);
 		updateristoro.setAddress(ristoro.getAddress());
 		updateristoro.setCity(ristoro.getCity());
 		updateristoro.setEmail(ristoro.getEmail());
@@ -38,8 +38,8 @@ public class RistoroController {
 		ristorodao.updateRistoro(updateristoro);
 	}
 	
-	public void deleteRistoro(UUID uuid) {
-		Ristoro ristoro = ristorodao.getRistoro(uuid);
+	public void deleteRistoro(long id) {
+		Ristoro ristoro = ristorodao.getRistoro(id);
 		ristorodao.deleteRistoro(ristoro);
 	}
 	

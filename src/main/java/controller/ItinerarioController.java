@@ -16,14 +16,14 @@ public class ItinerarioController {
 	@Inject
 	private ItinerarioDao itinerariodao;
 	
-	public Itinerario getItinerario(UUID uuid) {
-		return(itinerariodao.getItinerario(uuid));
+	public Itinerario getItinerario(long id ) {
+		return(itinerariodao.getItinerario(id));
 	}
 	public void createItinerario(Itinerario itinerario) {
 		itinerariodao.createItinerario(itinerario);
 	}
-	public void updateItinerario(UUID uuid, Itinerario itinerario) {
-		Itinerario updateitinerario = itinerariodao.getItinerario(uuid);
+	public void updateItinerario(long id , Itinerario itinerario) {
+		Itinerario updateitinerario = itinerariodao.getItinerario(id);
 		updateitinerario.setDescription(itinerario.getDescription());
 		updateitinerario.setEndcity(itinerario.getEndcity());
 		updateitinerario.setEndlatitude(itinerario.getEndlatitude());
@@ -38,8 +38,8 @@ public class ItinerarioController {
 		updateitinerario.setTrack(itinerario.getTrack());
 		itinerariodao.updateItinerario(updateitinerario);
 	}
-	public void deleteItinerario(UUID uuid) {
-		Itinerario itinerario = itinerariodao.getItinerario(uuid);
+	public void deleteItinerario(long id) {
+		Itinerario itinerario = itinerariodao.getItinerario(id);
 		itinerariodao.deleteItinerario(itinerario);
 	}
 	public List<Itinerario> getAllItinerari(){

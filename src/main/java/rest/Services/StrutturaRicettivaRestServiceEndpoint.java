@@ -30,11 +30,10 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
 		
 	@GET
-	@Path("/uuid/{uuid}")
+	@Path("/get/id/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getStrutturaRicettiva(@PathParam("uuid") UUID uuid) {
-		StrutturaRicettiva strutturaricettiva = strutturaricettivacontroller.getStrutturaRicettiva(uuid);
+	public Response getStrutturaRicettiva(@PathParam("id") long id) {
+		StrutturaRicettiva strutturaricettiva = strutturaricettivacontroller.getStrutturaRicettiva(id);
 	    return Response.ok(strutturaricettiva).build();
 	}
 	    
@@ -55,17 +54,17 @@ public class StrutturaRicettivaRestServiceEndpoint {
     }
 	  	
  	@PUT
-    @Path("/uuid/{uuid}")
-    public Response update(@PathParam("uuid") UUID uuid, StrutturaRicettiva strutturaricettiva) {
- 		strutturaricettivacontroller.updateStrutturaRicettiva(uuid,strutturaricettiva);
+    @Path("/update/id/{id}")
+    public Response update(@PathParam("id") long id, StrutturaRicettiva strutturaricettiva) {
+ 		strutturaricettivacontroller.updateStrutturaRicettiva(id,strutturaricettiva);
         return Response.ok().build();
     }
 	  	
 	    
-	@PUT
-	@Path("/uuid/{uuid}")
-	public Response delete(@PathParam("uuid") UUID uuid) {
-		strutturaricettivacontroller.deleteStrutturaRicettiva(uuid);
+ 	@GET
+	@Path("/delete/id/{id}")
+	public Response delete(@PathParam("id") long id) {
+		strutturaricettivacontroller.deleteStrutturaRicettiva(id);
 	    return Response.ok().build();
 	}
 

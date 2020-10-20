@@ -14,7 +14,7 @@ import model.StrutturaRicettivaTypology.*;
 
 @Entity
 public class StrutturaRicettiva {
-	private UUID uuid;
+	private long id;
 	private String name;
 	private String city;
 	private String province;
@@ -30,12 +30,12 @@ public class StrutturaRicettiva {
 	@GeneratedValue
 	@Column(name="ID", nullable = false)
 	@NotNull
-	public UUID getUuid() {
-		return uuid;
+	public long getId() {
+		return id;
 	}
 
-	public void setUuid(UUID uuid) {
-		this.uuid = uuid;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	

@@ -17,8 +17,8 @@ public class ItinerarioDaoBean implements ItinerarioDao {
 	public ItinerarioDaoBean() {};
 	
 	@Override
-	public Itinerario getItinerario(UUID uuid) {
-		return entitymanager.find(Itinerario.class, uuid);
+	public Itinerario getItinerario(long id ) {
+		return entitymanager.find(Itinerario.class, id);
 	}
 
 	@Override

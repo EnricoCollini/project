@@ -18,8 +18,8 @@ public class RistoroDaoBean implements RistoroDao {
 	public RistoroDaoBean() {};
 	
 	@Override
-	public Ristoro getRistoro(UUID uuid) {
-		return entitymanager.find(Ristoro.class, uuid);
+	public Ristoro getRistoro(long id) {
+		return entitymanager.find(Ristoro.class, id);
 	}
 
 	@Override

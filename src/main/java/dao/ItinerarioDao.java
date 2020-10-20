@@ -6,7 +6,7 @@ import java.util.UUID;
 import model.Itinerario;
 
 public interface ItinerarioDao {
-	public Itinerario getItinerario(UUID uuid);
+	public Itinerario getItinerario(long id);
 	public void createItinerario(Itinerario itinerario);
 	public void updateItinerario(Itinerario itinerario);
 	public void deleteItinerario(Itinerario itinerario);

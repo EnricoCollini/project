@@ -13,7 +13,7 @@ import static model.RistoroTypology.*;
 @Entity
 public class Ristoro{
 
-	private UUID uuid;
+	private long id;
 	private String name;
 	private String city;
 	private String province;
@@ -30,12 +30,12 @@ public class Ristoro{
 	@GeneratedValue
 	@Column(name="ID", nullable = false)
 	@NotNull
-	public UUID getUuid() {
-		return uuid;
+	public long getId() {
+		return id;
 	}
 
-	public void setUuid(UUID uuid) {
-		this.uuid = uuid;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	

@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Itinerario {
 	
-	private UUID uuid;
+	private long id;
 	private String name;
 	private String startcity;
 	private String startprovince;
@@ -37,12 +37,12 @@ public class Itinerario {
 	@GeneratedValue
 	@Column(name="ID", nullable = false)
 	@NotNull
-	public UUID getUuid() {
-		return uuid;
+	public long getId() {
+		return id;
 	}
 	
-	public void setUuid(UUID uuid) {
-		this.uuid = uuid;
+	public void setId(long id ) {
+		this.id = id;
 	}
 	
 	

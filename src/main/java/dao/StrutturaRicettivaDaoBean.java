@@ -18,8 +18,8 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 	public StrutturaRicettivaDaoBean() {};
 	
 	@Override
-	public StrutturaRicettiva getStrutturaRicettiva(UUID uuid) {
-		return entitymanager.find(StrutturaRicettiva.class, uuid);
+	public StrutturaRicettiva getStrutturaRicettiva(long id ) {
+		return entitymanager.find(StrutturaRicettiva.class, id);
 	}
 
 	@Override

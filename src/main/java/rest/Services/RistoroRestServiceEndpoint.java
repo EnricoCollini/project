@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import model.AreaNaturale;
+import model.Itinerario;
 import model.Ristoro;
 import controller.AreaNaturaleController;
 import controller.RistoroController;
@@ -29,14 +30,15 @@ public class RistoroRestServiceEndpoint {
 		return "Hello World";
 	}
 		
-	@GET
-	@Path("/uuid/{uuid}")
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getRistoro(@PathParam("uuid") UUID uuid) {
-	    Ristoro ristoro = ristorocontroller.getRistoro(uuid);
-	    return Response.ok(ristoro).build();
-	}
+	
+    @GET
+    @Path("/get/id/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAreaNaturale(@PathParam("id") long id) {
+    	Ristoro ristoro = ristorocontroller.getRistoro(id);
+        return Response.ok(ristoro).build();
+    }
+	    
 	    
 	@GET
 	@Path("/ristori")
@@ -55,17 +57,17 @@ public class RistoroRestServiceEndpoint {
     }
 	  	
  	@PUT
-    @Path("/uuid/{uuid}")
-    public Response update(@PathParam("uuid") UUID uuid, Ristoro ristoro) {
- 		ristorocontroller.updateRistoro(uuid,ristoro);
+    @Path("/update/id/{id}")
+    public Response update(@PathParam("id") long id, Ristoro ristoro) {
+ 		ristorocontroller.updateRistoro(id,ristoro);
         return Response.ok().build();
     }
 	  	
 	    
-	@PUT
-	@Path("/uuid/{uuid}")
-	public Response delete(@PathParam("uuid") UUID uuid) {
-	 	ristorocontroller.deleteRistoro(uuid);
+ 	@GET
+	@Path("/delete/id/{id}")
+	public Response delete(@PathParam("id") long id) {
+	 	ristorocontroller.deleteRistoro(id);
 	    return Response.ok().build();
 	}
 }

@@ -17,14 +17,14 @@ public class StrutturaRicettivaController {
 	@Inject
 	private StrutturaRicettivaDao strutturaricettivadao;
 	
-	public StrutturaRicettiva getStrutturaRicettiva(UUID uuid) {
-		return(strutturaricettivadao.getStrutturaRicettiva(uuid));
+	public StrutturaRicettiva getStrutturaRicettiva(long id ) {
+		return(strutturaricettivadao.getStrutturaRicettiva(id));
 	}
 	public void createStrutturaRicettiva(StrutturaRicettiva strutturaricettiva) {
 		strutturaricettivadao.createStrutturaRicettiva(strutturaricettiva);
 	}
-	public void updateStrutturaRicettiva(UUID uuid, StrutturaRicettiva strutturaricettiva) {
-		StrutturaRicettiva updatestrutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(uuid);
+	public void updateStrutturaRicettiva(long id, StrutturaRicettiva strutturaricettiva) {
+		StrutturaRicettiva updatestrutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(id);
 		
 		updatestrutturaricettiva.setAddress(strutturaricettiva.getAddress());
 		updatestrutturaricettiva.setCity(strutturaricettiva.getCity());
@@ -38,8 +38,8 @@ public class StrutturaRicettivaController {
 		strutturaricettivadao.updateStrutturaRicettiva(updatestrutturaricettiva);
 	}
 	
-	public void deleteStrutturaRicettiva(UUID uuid) {
-		StrutturaRicettiva strutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(uuid);
+	public void deleteStrutturaRicettiva(long id) {
+		StrutturaRicettiva strutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(id);
 		strutturaricettivadao.deleteStrutturaRicettiva(strutturaricettiva);
 	}
 	public List<StrutturaRicettiva> getAllStruttureRicettive(){

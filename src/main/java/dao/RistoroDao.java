@@ -6,7 +6,7 @@ import java.util.UUID;
 import model.Ristoro;
 
 public interface RistoroDao {
-	public Ristoro getRistoro(UUID uuid);
+	public Ristoro getRistoro(long id);
 	public void createRistoro(Ristoro ristoro);
 	public void updateRistoro(Ristoro ristoro);
 	public void deleteRistoro(Ristoro ristoro);
