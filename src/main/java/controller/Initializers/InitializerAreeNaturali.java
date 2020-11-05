@@ -44,7 +44,7 @@ public class InitializerAreeNaturali {
 		//System.out.println("name");
 		Gson g = new Gson();
 	    try {
-			areenaturali =  new String(Files.readAllBytes(Paths.get("/home/enrico/eclipse-workspace/project/src/main/resources/AreeNaturali.json")));
+			areenaturali =  new String(Files.readAllBytes(Paths.get("/home/andrea/eclipse-workspace/project/src/main/resources/AreeNaturali.json")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

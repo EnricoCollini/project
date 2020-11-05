@@ -8,6 +8,7 @@
         <class>model.Ristoro</class>
         <class>model.StrutturaRicettiva</class>
         <class>model.Itinerario</class>
+        <class>model.PuntoInteresseGenerico</class>
         
 		<properties>
          	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />

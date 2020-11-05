@@ -48,7 +48,7 @@ public class InitializerItinerari {
 		
 		Gson g = new Gson();
 	    try {
-	    	itinerari =  new String(Files.readAllBytes(Paths.get("/home/enrico/eclipse-workspace/project/src/main/resources/Itinerari.json")));
+	    	itinerari =  new String(Files.readAllBytes(Paths.get("/home/andrea/eclipse-workspace/project/src/main/resources/Itinerari.json")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

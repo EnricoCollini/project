@@ -1,1 +1,11 @@
 /target/
+
+.classpath
+
+src/main/java/controller/Initializers/InitializerAreeNaturali.java
+
+src/main/java/controller/Initializers/InitializerStruttureRicettive.java
+
+src/main/java/controller/Initializers/InitializerRistori.java
+
+src/main/java/controller/Initializers/InitializerItinerari.java
