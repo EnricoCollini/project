@@ -6,15 +6,24 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import com.mysql.cj.jdbc.Clob;
 
+
 import static model.AreaNaturaleTypology.*;
+import model.Ristoro;
+import model.StrutturaRicettiva;
+import model.PuntoInteresseGenerico;
+import model.Itinerario;
 
 @Entity
 public class AreaNaturale{
@@ -28,6 +37,14 @@ public class AreaNaturale{
 	private String description;
 	private AreaNaturaleTypology areanaturaletypology;
 	private byte[] image;
+	private List<Ristoro> ristori;
+	private List<StrutturaRicettiva> strutturaricettiva;
+	private List<PuntoInteresseGenerico> puntointeressegenerico;
+	private List<Itinerario> itinerari;
+	
+	
+	
+	
 	
 	public AreaNaturale() {}
 	
@@ -122,6 +139,43 @@ public class AreaNaturale{
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+	
+
+	@OneToMany(mappedBy = "areanaturale")
+	public List<Ristoro> getRistori() {
+		return ristori;
+	}
+
+	public void setRistori(List<Ristoro> ristori) {
+		this.ristori = ristori;
+	}
+
+	@OneToMany(mappedBy = "areanaturale")
+	public List<StrutturaRicettiva> getStrutturaricettiva() {
+		return strutturaricettiva;
+	}
+
+	public void setStrutturaricettiva(List<StrutturaRicettiva> strutturaricettiva) {
+		this.strutturaricettiva = strutturaricettiva;
+	}
+
+	@OneToMany(mappedBy = "areanaturale")
+	public List<PuntoInteresseGenerico> getPuntointeressegenerico() {
+		return puntointeressegenerico;
+	}
+
+	public void setPuntointeressegenerico(List<PuntoInteresseGenerico> puntointeressegenerico) {
+		this.puntointeressegenerico = puntointeressegenerico;
+	}
+
+	@ManyToMany(mappedBy = "areenaturali")
+	public List<Itinerario> getItinerari() {
+		return itinerari;
+	}
+
+	public void setItinerari(List<Itinerario> itinerari) {
+		this.itinerari = itinerari;
 	}
 	
 	

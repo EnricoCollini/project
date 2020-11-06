@@ -4,13 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import model.StrutturaRicettivaTypology.*;
+import model.AreaNaturale;
 
 @Entity
 public class StrutturaRicettiva {
@@ -24,6 +31,9 @@ public class StrutturaRicettiva {
 	private  String address;
 	private String email;
 	private StrutturaRicettivaTypology strutturaricettivatipology;
+	private AreaNaturale areanaturale;
+	private List<Itinerario> itinerari;
+	
 
 	
 	@Id
@@ -127,5 +137,27 @@ public class StrutturaRicettiva {
 
 	public void setStrutturaricettivatipology(StrutturaRicettivaTypology strutturaricettivatipology) {
 		this.strutturaricettivatipology = strutturaricettivatipology;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "AREANATURALE_ID") 
+	public AreaNaturale getAreanaturale() {
+		return areanaturale;
+	}
+
+	public void setAreanaturale(AreaNaturale areanaturale) {
+		this.areanaturale = areanaturale;
+	}
+
+	@ManyToMany
+	@JoinTable(name = "strutturaricettiva_itinerario",
+	joinColumns = @JoinColumn(name = "strutturaricettiva_id"),
+	inverseJoinColumns = @JoinColumn(name = "itinerario_id"))
+	public List<Itinerario> getItinerari() {
+		return itinerari;
+	}
+
+	public void setItinerari(List<Itinerario> itinerari) {
+		this.itinerari = itinerari;
 	}
 }

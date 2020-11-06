@@ -1,10 +1,17 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import model.AreaNaturale;
 
 @Entity
 public class PuntoInteresseGenerico {
@@ -16,6 +23,8 @@ public class PuntoInteresseGenerico {
 	private String province;
 	private Float latitude;
 	private Float longitude;
+	private AreaNaturale areanaturale;
+	private List<Itinerario> itinerari;
 	
 	
 	@Id
@@ -75,6 +84,26 @@ public class PuntoInteresseGenerico {
 	}
 	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name = "AREANATURALE_ID")
+	public AreaNaturale getAreanaturale() {
+		return areanaturale;
+	}
+	public void setAreanaturale(AreaNaturale areanaturale) {
+		this.areanaturale = areanaturale;
+	}
+	
+	@ManyToMany
+	@JoinTable(name = "puntointeressegenerico_itinerario",
+	joinColumns = @JoinColumn(name = "puntointeressegenerico_id"),
+	inverseJoinColumns = @JoinColumn(name = "itinerario_id"))
+	public List<Itinerario> getItinerari() {
+		return itinerari;
+	}
+	public void setItinerari(List<Itinerario> itinerari) {
+		this.itinerari = itinerari;
 	}
 	
 

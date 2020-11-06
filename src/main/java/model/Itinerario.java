@@ -4,13 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+
+import java.util.List;
 import java.util.UUID;
 
 import javax.json.Json;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
+import model.AreaNaturale;
 
 @Entity
 public class Itinerario {
@@ -28,6 +34,10 @@ public class Itinerario {
 	private String description;
 	private byte[] image;
 	private String track;
+	private List<AreaNaturale> areenaturali;
+	private List<PuntoInteresseGenerico> puntiinteressegenerici;
+	private List<Ristoro> ristori;
+	private List<StrutturaRicettiva> strutturericettive;
 	//TODO: add gpx file;
 	
 	
@@ -162,6 +172,45 @@ public class Itinerario {
 
 	public void setTrack(String track) {
 		this.track = track;
+	}
+
+	@ManyToMany
+	@JoinTable(name = "itinerario_areanaturale",
+	joinColumns = @JoinColumn(name = "itinerario_id"),
+	inverseJoinColumns = @JoinColumn(name = "areanaturale_id"))
+	public List<AreaNaturale> getAreenaturali() {
+		return areenaturali;
+	}
+
+	public void setAreenaturali(List<AreaNaturale> areenaturali) {
+		this.areenaturali = areenaturali;
+	}
+
+	@ManyToMany(mappedBy = "itinerari")
+	public List<PuntoInteresseGenerico> getPuntiinteressegenerici() {
+		return puntiinteressegenerici;
+	}
+
+	public void setPuntiinteressegenerici(List<PuntoInteresseGenerico> puntiinteressegenerici) {
+		this.puntiinteressegenerici = puntiinteressegenerici;
+	}
+
+	@ManyToMany(mappedBy = "itinerari")
+	public List<Ristoro> getRistori() {
+		return ristori;
+	}
+
+	public void setRistori(List<Ristoro> ristori) {
+		this.ristori = ristori;
+	}
+
+	@ManyToMany(mappedBy = "itinerari")
+	public List<StrutturaRicettiva> getStrutturericettive() {
+		return strutturericettive;
+	}
+
+	public void setStrutturericettive(List<StrutturaRicettiva> strutturericettive) {
+		this.strutturericettive = strutturericettive;
 	}
 	
 }
