@@ -70,4 +70,12 @@ public class RistoroRestServiceEndpoint {
 	 	ristorocontroller.deleteRistoro(id);
 	    return Response.ok().build();
 	}
+ 	
+ 	@POST
+ 	@Path("/associa/{idRisto}/{idArea}")
+ 	public Response associaArea(@PathParam("idRisto") long idRisto, @PathParam("idArea") long idArea) {
+ 		ristorocontroller.associaArea(idRisto, idArea);
+ 		return Response.ok().build();
+ 	}
+ 	
 }

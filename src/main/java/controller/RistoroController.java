@@ -6,6 +6,7 @@ import java.util.UUID;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AreaNaturaleDao;
 import dao.RistoroDao;
 import dao.RistoroDaoBean;
 import model.AreaNaturale;
@@ -15,6 +16,7 @@ import model.Ristoro;
 public class RistoroController {
 	@Inject
 	private RistoroDao ristorodao;
+	private AreaNaturaleDao areanaturaledao;
 	
 	public Ristoro getRistoro(long id) {
 		return(ristorodao.getRistoro(id));
@@ -45,6 +47,12 @@ public class RistoroController {
 	
 	public List<Ristoro> getAllRistori(){
 		return(ristorodao.getAllRistori());
+	}
+	
+	public void associaArea(long idRistoro, long idArea) {
+		Ristoro ristoro = ristorodao.getRistoro(idRistoro);
+		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
+		ristorodao.associaArea(ristoro, areanaturale);
 	}
 	
 	
