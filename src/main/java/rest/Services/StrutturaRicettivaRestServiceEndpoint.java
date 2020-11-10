@@ -13,6 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import controller.AreaNaturaleController;
 import controller.RistoroController;
 import controller.StrutturaRicettivaController;
 import model.Ristoro;
@@ -22,6 +23,7 @@ import model.StrutturaRicettiva;
 public class StrutturaRicettivaRestServiceEndpoint {
 	@Inject
 	private StrutturaRicettivaController strutturaricettivacontroller;
+
 	
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
@@ -67,5 +69,18 @@ public class StrutturaRicettivaRestServiceEndpoint {
 		strutturaricettivacontroller.deleteStrutturaRicettiva(id);
 	    return Response.ok().build();
 	}
+ 	
+ 	@GET
+ 	@Path("/associa/{idStru}/{idArea}")
+ 	public Response associaArea(@PathParam("idStru") long idStru, @PathParam("idArea") long idArea) {
+ 		strutturaricettivacontroller.associaArea(idStru, idArea);
+ 		
+        String date = idStru + "/" + idArea;
+
+        return Response.status(200)
+         .entity("associa is called, idStru/idArea : " + date)
+         .build();
+ 	}
+ 	
 
 }

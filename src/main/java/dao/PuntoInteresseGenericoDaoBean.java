@@ -7,7 +7,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import model.AreaNaturale;
 import model.PuntoInteresseGenerico;
+import model.Ristoro;
 
 @Stateless
 public class PuntoInteresseGenericoDaoBean implements PuntoInteresseGenericoDao {
@@ -45,6 +47,13 @@ public class PuntoInteresseGenericoDaoBean implements PuntoInteresseGenericoDao 
 		Query query = entitymanager.createQuery("SELECT p FROM PuntoInteresseGenerico p");
 		List<PuntoInteresseGenerico> ress = query.getResultList();
 		return ress;
+	}
+
+	@Override
+	public void associaArea(PuntoInteresseGenerico punto, AreaNaturale areanaturale) {
+		punto.setAreanaturale(areanaturale);
+		entitymanager.persist(punto);
+		
 	}
 
 }

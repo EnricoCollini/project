@@ -5,14 +5,20 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AreaNaturaleDao;
 import dao.PuntoInteresseGenericoDao;
+import model.AreaNaturale;
 import model.PuntoInteresseGenerico;
+import model.StrutturaRicettiva;
 
 @Stateless
 public class PuntoInteresseGenericoController {
 	
 	@Inject
 	private PuntoInteresseGenericoDao puntointeressegenericodao;
+	
+	@Inject
+	private AreaNaturaleDao areanaturaledao;
 	
 	public PuntoInteresseGenerico getPuntoInteresseGenrico(long id) {
 		return puntointeressegenericodao.getPuntoInteresseGenerico(id);
@@ -40,6 +46,12 @@ public class PuntoInteresseGenericoController {
 	
 	public List<PuntoInteresseGenerico> getAllPuntiInteresseGenerici(){
 		return(puntointeressegenericodao.getPuntiInteresseGenerici());
+	}
+	
+	public void associaArea(long idPunto, long idArea) {
+		PuntoInteresseGenerico punto = puntointeressegenericodao.getPuntoInteresseGenerico(idPunto);
+		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
+		puntointeressegenericodao.associaArea(punto, areanaturale);
 	}
 	
 	

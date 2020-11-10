@@ -62,6 +62,18 @@ public class PuntoInteresseGenericoServiceEndpoint {
     	puntointeressecontroller.deletePuntoInteresseGenerico(id);
         return Response.ok().build();
     }
+    
+    @GET
+ 	@Path("/associa/{idPunto}/{idArea}")
+ 	public Response associaArea(@PathParam("idPunto") long idPunto, @PathParam("idArea") long idArea) {
+ 		puntointeressecontroller.associaArea(idPunto, idArea);
+ 		
+        String date = idPunto + "/" + idArea;
+
+        return Response.status(200)
+         .entity("associa is called, idPunto/idArea : " + date)
+         .build();
+ 	}
 	
 	
 	

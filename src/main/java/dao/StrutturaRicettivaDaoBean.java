@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import model.AreaNaturale;
 import model.StrutturaRicettiva;
 
 @Stateless
@@ -48,6 +49,13 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 		Query query = entitymanager.createQuery("SELECT s FROM StrutturaRicettiva s");
 		List<StrutturaRicettiva> strutturericettive = query.getResultList();
 		return strutturericettive;
+	}
+
+	@Override
+	public void associaArea(StrutturaRicettiva strutturaricettiva, AreaNaturale areanaturale) {
+		strutturaricettiva.setAreanaturale(areanaturale);
+		entitymanager.persist(strutturaricettiva);
+		
 	}
 
 }
