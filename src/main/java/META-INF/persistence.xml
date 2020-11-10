@@ -3,12 +3,12 @@
 	<persistence-unit name="project">
 	
 	<jta-data-source>java:/ResourcesDS</jta-data-source>
-      	<class>model.TestEntity</class>
         <class>model.AreaNaturale</class>
         <class>model.Ristoro</class>
         <class>model.StrutturaRicettiva</class>
         <class>model.Itinerario</class>
         <class>model.PuntoInteresseGenerico</class>
+        <class>model.TestEntity</class>
         
 		<properties>
          	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />

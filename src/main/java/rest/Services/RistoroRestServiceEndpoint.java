@@ -71,11 +71,16 @@ public class RistoroRestServiceEndpoint {
 	    return Response.ok().build();
 	}
  	
- 	@POST
+ 	@GET
  	@Path("/associa/{idRisto}/{idArea}")
  	public Response associaArea(@PathParam("idRisto") long idRisto, @PathParam("idArea") long idArea) {
  		ristorocontroller.associaArea(idRisto, idArea);
- 		return Response.ok().build();
+ 		
+        String date = idRisto + "/" + idArea;
+
+        return Response.status(200)
+         .entity("associa is called, idRisto/idArea : " + date)
+         .build();
  	}
  	
 }

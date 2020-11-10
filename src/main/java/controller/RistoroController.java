@@ -16,6 +16,7 @@ import model.Ristoro;
 public class RistoroController {
 	@Inject
 	private RistoroDao ristorodao;
+	@Inject
 	private AreaNaturaleDao areanaturaledao;
 	
 	public Ristoro getRistoro(long id) {
@@ -51,6 +52,7 @@ public class RistoroController {
 	
 	public void associaArea(long idRistoro, long idArea) {
 		Ristoro ristoro = ristorodao.getRistoro(idRistoro);
+		System.out.println("ristoro trovato");
 		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
 		ristorodao.associaArea(ristoro, areanaturale);
 	}

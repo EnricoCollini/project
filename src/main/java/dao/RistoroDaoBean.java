@@ -51,7 +51,7 @@ public class RistoroDaoBean implements RistoroDao {
 	@Override
 	public void associaArea(Ristoro ristoro, AreaNaturale areanaturale) {
 		ristoro.setAreanaturale(areanaturale);
-		entitymanager.merge(ristoro);
+		entitymanager.persist(ristoro);
 		
 	}
 

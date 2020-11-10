@@ -32,6 +32,7 @@ public class Ristoro{
 	private RistoroTypology ristorotypology;
 	private AreaNaturale areanaturale;
 	private List<Itinerario> itinerari;
+	
 
 	
 	@Id
