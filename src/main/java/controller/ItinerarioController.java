@@ -6,8 +6,10 @@ import java.util.UUID;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.ItinerarioDaoBean;
+import model.AreaNaturale;
 import model.Itinerario;
 import model.StrutturaRicettiva;
 
@@ -15,6 +17,9 @@ import model.StrutturaRicettiva;
 public class ItinerarioController {
 	@Inject
 	private ItinerarioDao itinerariodao;
+	
+	@Inject
+	private AreaNaturaleDao areanaturaledao;
 	
 	public Itinerario getItinerario(long id ) {
 		return(itinerariodao.getItinerario(id));
@@ -44,5 +49,11 @@ public class ItinerarioController {
 	}
 	public List<Itinerario> getAllItinerari(){
 		return(itinerariodao.getAllItinerari());
+	}
+	
+	public void associaArea(long idItinerario, long idArea) {
+		Itinerario itinerario = itinerariodao.getItinerario(idItinerario);
+		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
+		itinerariodao.associaArea(itinerario, areanaturale);
 	}
 }

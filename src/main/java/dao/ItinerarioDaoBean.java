@@ -7,6 +7,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import model.AreaNaturale;
 import model.Itinerario;
 
 @Stateless
@@ -44,5 +46,12 @@ public class ItinerarioDaoBean implements ItinerarioDao {
 		Query query = entitymanager.createQuery("SELECT a FROM Itinerario a");
 		List<Itinerario> ress = query.getResultList();
 		return ress;
+	}
+
+	@Override
+	public void associaArea(Itinerario itinerario, AreaNaturale areanaturale) {
+		itinerario.aggiungiArea(areanaturale);
+		entitymanager.persist(itinerario);
+		
 	}
 }

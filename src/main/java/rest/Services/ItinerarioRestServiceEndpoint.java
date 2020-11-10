@@ -72,5 +72,19 @@ public class ItinerarioRestServiceEndpoint {
 		itinerariocontroller.deleteItinerario(id);
 	    return Response.ok().build();
 	}
+	
+	@GET
+ 	@Path("/associa/{idIti}/{idArea}")
+ 	public Response associaArea(@PathParam("idIti") long idIti, @PathParam("idArea") long idArea) {
+ 		itinerariocontroller.associaArea(idIti, idArea);
+ 		
+        String date = idIti + "/" + idArea;
+
+        return Response.status(200)
+         .entity("associa is called, idIti/idArea : " + date)
+         .build();
+ 	}
+
+	
 
 }

@@ -213,4 +213,10 @@ public class Itinerario {
 		this.strutturericettive = strutturericettive;
 	}
 	
+	public void aggiungiArea(AreaNaturale areanaturale) {
+		List<AreaNaturale> areenaturali = this.getAreenaturali();
+		areenaturali.add(areanaturale);
+		this.setAreenaturali(areenaturali);
+	}
+	
 }

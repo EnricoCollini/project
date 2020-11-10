@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 import java.util.UUID;
 
+import model.AreaNaturale;
 import model.Itinerario;
 
 public interface ItinerarioDao {
@@ -11,4 +12,5 @@ public interface ItinerarioDao {
 	public void updateItinerario(Itinerario itinerario);
 	public void deleteItinerario(Itinerario itinerario);
 	public List<Itinerario> getAllItinerari();
+	public void associaArea(Itinerario itinerario, AreaNaturale areanaturale);
 }
