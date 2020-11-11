@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import model.AreaNaturale;
+import model.Itinerario;
 import model.PuntoInteresseGenerico;
 import model.Ristoro;
 
@@ -52,6 +53,13 @@ public class PuntoInteresseGenericoDaoBean implements PuntoInteresseGenericoDao 
 	@Override
 	public void associaArea(PuntoInteresseGenerico punto, AreaNaturale areanaturale) {
 		punto.setAreanaturale(areanaturale);
+		entitymanager.persist(punto);
+		
+	}
+
+	@Override
+	public void associaIti(PuntoInteresseGenerico punto, Itinerario itinerario) {
+		punto.aggiungiItinerario(itinerario);
 		entitymanager.persist(punto);
 		
 	}

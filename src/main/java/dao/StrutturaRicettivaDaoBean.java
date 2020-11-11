@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import model.AreaNaturale;
+import model.Itinerario;
 import model.StrutturaRicettiva;
 
 @Stateless
@@ -54,6 +55,13 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 	@Override
 	public void associaArea(StrutturaRicettiva strutturaricettiva, AreaNaturale areanaturale) {
 		strutturaricettiva.setAreanaturale(areanaturale);
+		entitymanager.persist(strutturaricettiva);
+		
+	}
+
+	@Override
+	public void associaIti(StrutturaRicettiva strutturaricettiva, Itinerario itinerario) {
+		strutturaricettiva.aggiungiItinerario(itinerario);
 		entitymanager.persist(strutturaricettiva);
 		
 	}

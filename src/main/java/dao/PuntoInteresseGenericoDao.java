@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import model.AreaNaturale;
+import model.Itinerario;
 import model.PuntoInteresseGenerico;
 
 public interface PuntoInteresseGenericoDao {
@@ -13,4 +14,5 @@ public interface PuntoInteresseGenericoDao {
 	public void deletePuntoInteresseGenerico(PuntoInteresseGenerico puntointeressegenerico);
 	public List<PuntoInteresseGenerico> getPuntiInteresseGenerici();
 	public void associaArea(PuntoInteresseGenerico punto, AreaNaturale areanaturale);
+	public void associaIti(PuntoInteresseGenerico punto, Itinerario itinerario);
 }

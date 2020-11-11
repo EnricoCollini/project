@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import model.AreaNaturale;
+import model.Itinerario;
 import model.Ristoro;
 
 @Stateless
@@ -51,6 +52,13 @@ public class RistoroDaoBean implements RistoroDao {
 	@Override
 	public void associaArea(Ristoro ristoro, AreaNaturale areanaturale) {
 		ristoro.setAreanaturale(areanaturale);
+		entitymanager.persist(ristoro);
+		
+	}
+
+	@Override
+	public void associaIti(Ristoro ristoro, Itinerario itinerario) {
+		ristoro.aggiungiItinerario(itinerario);
 		entitymanager.persist(ristoro);
 		
 	}

@@ -71,7 +71,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
  	
  	@GET
- 	@Path("/associa/{idStru}/{idArea}")
+ 	@Path("/associaArea/{idStru}/{idArea}")
  	public Response associaArea(@PathParam("idStru") long idStru, @PathParam("idArea") long idArea) {
  		strutturaricettivacontroller.associaArea(idStru, idArea);
  		
@@ -79,6 +79,18 @@ public class StrutturaRicettivaRestServiceEndpoint {
 
         return Response.status(200)
          .entity("associa is called, idStru/idArea : " + date)
+         .build();
+ 	}
+ 	
+ 	@GET
+ 	@Path("/associaIti/{idStru}/{idIti}")
+ 	public Response associaIti(@PathParam("idStru") long idStru, @PathParam("idIti") long idIti) {
+ 		strutturaricettivacontroller.associaIti(idStru, idIti);
+ 		
+        String date = idStru + "/" + idIti;
+
+        return Response.status(200)
+         .entity("associa is called, idStru/idIti : " + date)
          .build();
  	}
  	

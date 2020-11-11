@@ -7,9 +7,11 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import dao.AreaNaturaleDao;
+import dao.ItinerarioDao;
 import dao.StrutturaRicettivaDao;
 import dao.StrutturaRicettivaDaoBean;
 import model.AreaNaturale;
+import model.Itinerario;
 import model.Ristoro;
 import model.StrutturaRicettiva;
 
@@ -21,6 +23,9 @@ public class StrutturaRicettivaController {
 	
 	@Inject
 	private AreaNaturaleDao areanaturaledao;
+	
+	@Inject
+	private ItinerarioDao itinerariodao;
 	
 	public StrutturaRicettiva getStrutturaRicettiva(long id ) {
 		return(strutturaricettivadao.getStrutturaRicettiva(id));
@@ -56,5 +61,13 @@ public class StrutturaRicettivaController {
 		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
 		strutturaricettivadao.associaArea(strutturaricettiva, areanaturale);
 	}
+	
+	public void associaIti(long idStruttura, long idIti) {
+		StrutturaRicettiva strutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(idStruttura);
+		Itinerario itinerario = itinerariodao.getItinerario(idIti);
+		strutturaricettivadao.associaIti(strutturaricettiva, itinerario);
+	}
+	
+	
 	
 }

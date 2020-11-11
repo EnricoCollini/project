@@ -74,7 +74,7 @@ public class ItinerarioRestServiceEndpoint {
 	}
 	
 	@GET
- 	@Path("/associa/{idIti}/{idArea}")
+ 	@Path("/associaArea/{idIti}/{idArea}")
  	public Response associaArea(@PathParam("idIti") long idIti, @PathParam("idArea") long idArea) {
  		itinerariocontroller.associaArea(idIti, idArea);
  		

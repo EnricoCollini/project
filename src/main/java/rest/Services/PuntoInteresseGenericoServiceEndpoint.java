@@ -64,7 +64,7 @@ public class PuntoInteresseGenericoServiceEndpoint {
     }
     
     @GET
- 	@Path("/associa/{idPunto}/{idArea}")
+ 	@Path("/associaArea/{idPunto}/{idArea}")
  	public Response associaArea(@PathParam("idPunto") long idPunto, @PathParam("idArea") long idArea) {
  		puntointeressecontroller.associaArea(idPunto, idArea);
  		
@@ -72,6 +72,18 @@ public class PuntoInteresseGenericoServiceEndpoint {
 
         return Response.status(200)
          .entity("associa is called, idPunto/idArea : " + date)
+         .build();
+ 	}
+    
+    @GET
+ 	@Path("/associaIti/{idPunto}/{idIti}")
+ 	public Response associaIti(@PathParam("idPunto") long idPunto, @PathParam("idIti") long idIti) {
+ 		puntointeressecontroller.associaIti(idPunto, idIti);
+ 		
+        String date = idPunto + "/" + idIti;
+
+        return Response.status(200)
+         .entity("associa is called, idPunto/idIti : " + date)
          .build();
  	}
 	

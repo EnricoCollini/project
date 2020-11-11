@@ -72,7 +72,7 @@ public class RistoroRestServiceEndpoint {
 	}
  	
  	@GET
- 	@Path("/associa/{idRisto}/{idArea}")
+ 	@Path("/associaArea/{idRisto}/{idArea}")
  	public Response associaArea(@PathParam("idRisto") long idRisto, @PathParam("idArea") long idArea) {
  		ristorocontroller.associaArea(idRisto, idArea);
  		
@@ -80,6 +80,18 @@ public class RistoroRestServiceEndpoint {
 
         return Response.status(200)
          .entity("associa is called, idRisto/idArea : " + date)
+         .build();
+ 	}
+ 	
+ 	@GET
+ 	@Path("/associaIti/{idRisto}/{idIti}")
+ 	public Response associaIti(@PathParam("idRisto") long idRisto, @PathParam("idIti") long idIti) {
+ 		ristorocontroller.associaIti(idRisto, idIti);
+ 		
+        String date = idRisto + "/" + idIti;
+
+        return Response.status(200)
+         .entity("associa is called, idRisto/idIti : " + date)
          .build();
  	}
  	

@@ -160,4 +160,10 @@ public class StrutturaRicettiva {
 	public void setItinerari(List<Itinerario> itinerari) {
 		this.itinerari = itinerari;
 	}
+	
+	public void aggiungiItinerario(Itinerario itinerario) {
+		List<Itinerario> itinerari = this.getItinerari();
+		itinerari.add(itinerario);
+		this.setItinerari(itinerari);
+	}
 }

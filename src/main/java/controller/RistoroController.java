@@ -7,9 +7,11 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import dao.AreaNaturaleDao;
+import dao.ItinerarioDao;
 import dao.RistoroDao;
 import dao.RistoroDaoBean;
 import model.AreaNaturale;
+import model.Itinerario;
 import model.Ristoro;
 
 @Stateless
@@ -18,6 +20,8 @@ public class RistoroController {
 	private RistoroDao ristorodao;
 	@Inject
 	private AreaNaturaleDao areanaturaledao;
+	@Inject
+	private ItinerarioDao itinerariodao;
 	
 	public Ristoro getRistoro(long id) {
 		return(ristorodao.getRistoro(id));
@@ -56,6 +60,15 @@ public class RistoroController {
 		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
 		ristorodao.associaArea(ristoro, areanaturale);
 	}
+	
+	public void associaIti(long idRistoro, long idIti) {
+		Ristoro ristoro = ristorodao.getRistoro(idRistoro);
+		System.out.println("ristoro trovato");
+		Itinerario itinerario = itinerariodao.getItinerario(idIti);
+		ristorodao.associaIti(ristoro, itinerario);
+	}
+	
+	
 	
 	
 }
