@@ -1,5 +1,6 @@
 package rest.Services;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -84,6 +85,16 @@ public class ItinerarioRestServiceEndpoint {
          .entity("associa is called, idIti/idArea : " + date)
          .build();
  	}
+	
+	@GET
+	@Path("/areeAssociate/{idIti}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response areeAssociate(@PathParam("idIti") long idIti) {
+		List<Long> ids = itinerariocontroller.getAreeAssociate(idIti);
+		
+		return Response.ok(ids).build();
+	}
+	
 
 	
 

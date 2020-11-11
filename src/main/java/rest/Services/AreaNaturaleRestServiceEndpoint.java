@@ -1,6 +1,7 @@
 package rest.Services;
 
 import java.io.Console;
+import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -75,4 +76,13 @@ public class AreaNaturaleRestServiceEndpoint {
     	areanaturalecontroller.deleteAreaNaturale(id);
         return Response.ok().build();
     }
+    
+    @GET
+	@Path("/itiAssociati/{idArea}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response itiAssociati(@PathParam("idArea") long idArea) {
+		List<Long> ids = areanaturalecontroller.getItiAssociati(idArea);
+		
+		return Response.ok(ids).build();
+	}
 }

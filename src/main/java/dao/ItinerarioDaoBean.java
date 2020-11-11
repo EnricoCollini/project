@@ -54,4 +54,13 @@ public class ItinerarioDaoBean implements ItinerarioDao {
 		entitymanager.persist(itinerario);
 		
 	}
+
+	@Override
+	public List<Long> areeAssociate(long idIti) {
+		Query query2 = entitymanager.createQuery("SELECT a.id FROM AreaNaturale a JOIN a.itinerari i WHERE i.id = :idIti")
+				.setParameter("idIti", idIti);
+		List<Long> ress = query2.getResultList();
+		return ress;
+	}
+	
 }

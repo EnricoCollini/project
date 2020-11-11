@@ -56,4 +56,8 @@ public class ItinerarioController {
 		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
 		itinerariodao.associaArea(itinerario, areanaturale);
 	}
+	
+	public List<Long> getAreeAssociate(long idIti){
+		return itinerariodao.areeAssociate(idIti);
+	}
 }

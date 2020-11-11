@@ -46,4 +46,8 @@ public class AreaNaturaleController {
 	public List<AreaNaturale> getAllAreeNaturalii(){
 		return(areanaturaledao.getAllAreeNaturalii());
 	}
+	
+	public List<Long> getItiAssociati(long idArea){
+		return areanaturaledao.itinerariAssociati(idArea);
+	}
 }

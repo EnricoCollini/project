@@ -50,4 +50,12 @@ public class AreaNaturaleDaoBean implements AreaNaturaleDao {
 		return ress;
 	}
 
+	@Override
+	public List<Long> itinerariAssociati(long idArea) {
+		Query query2 = entitymanager.createQuery("SELECT i.id FROM Itinerario i JOIN i.areenaturali a WHERE a.id = :idArea")
+				.setParameter("idArea", idArea);
+		List<Long> ress = query2.getResultList();
+		return ress;
+	}
+
 }

@@ -13,4 +13,5 @@ public interface ItinerarioDao {
 	public void deleteItinerario(Itinerario itinerario);
 	public List<Itinerario> getAllItinerari();
 	public void associaArea(Itinerario itinerario, AreaNaturale areanaturale);
+	public List<Long> areeAssociate(long idIti);
 }
