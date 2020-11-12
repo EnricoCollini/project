@@ -62,5 +62,29 @@ public class ItinerarioDaoBean implements ItinerarioDao {
 		List<Long> ress = query2.getResultList();
 		return ress;
 	}
+
+	@Override
+	public List<Long> ristoriAssociati(long idIti) {
+		Query query3 = entitymanager.createQuery("SELECT r.id FROM Ristoro r JOIN r.itinerari i WHERE i.id = :idIti")
+				.setParameter("idIti", idIti);
+		List<Long> ress = query3.getResultList();
+		return ress;
+	}
+
+	@Override
+	public List<Long> struttureAssociate(long idIti) {
+		Query query4 = entitymanager.createQuery("SELECT s.id FROM StrutturaRicettiva s JOIN s.itinerari i WHERE i.id = :idIti")
+				.setParameter("idIti", idIti);
+		List<Long> ress = query4.getResultList();
+		return ress;
+	}
+
+	@Override
+	public List<Long> puntiAssociati(long idIti) {
+		Query query5 = entitymanager.createQuery("SELECT p.id FROM PuntoInteresseGenerico p JOIN p.itinerari i WHERE i.id = :idIti")
+				.setParameter("idIti", idIti);
+		List<Long> ress = query5.getResultList();
+		return ress;
+	}
 	
 }

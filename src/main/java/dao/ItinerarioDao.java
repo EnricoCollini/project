@@ -14,4 +14,8 @@ public interface ItinerarioDao {
 	public List<Itinerario> getAllItinerari();
 	public void associaArea(Itinerario itinerario, AreaNaturale areanaturale);
 	public List<Long> areeAssociate(long idIti);
+	public List<Long> ristoriAssociati(long idIti);
+	public List<Long> struttureAssociate(long idIti);
+	public List<Long> puntiAssociati(long idIti);
+	
 }

@@ -64,4 +64,12 @@ public class PuntoInteresseGenericoDaoBean implements PuntoInteresseGenericoDao 
 		
 	}
 
+	@Override
+	public List<Long> itinerariAssociati(long idPunto) {
+		Query query2 = entitymanager.createQuery("SELECT i.id FROM Itinerario i JOIN i.puntiinteressegenerici p WHERE p.id = :idPunto")
+				.setParameter("idPunto", idPunto);
+		List<Long> ress = query2.getResultList();
+		return ress;
+	}
+
 }

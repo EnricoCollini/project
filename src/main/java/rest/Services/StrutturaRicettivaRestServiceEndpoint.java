@@ -1,5 +1,6 @@
 package rest.Services;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -93,6 +94,15 @@ public class StrutturaRicettivaRestServiceEndpoint {
          .entity("associa is called, idStru/idIti : " + date)
          .build();
  	}
+ 	
+    @GET
+	@Path("/itiAssociati/{idStru}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response itiAssociati(@PathParam("idStru") long idStru) {
+		List<Long> ids = strutturaricettivacontroller.getItiAssociati(idStru);
+		
+		return Response.ok(ids).build();
+	}
  	
 
 }

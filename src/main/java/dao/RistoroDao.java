@@ -15,5 +15,6 @@ public interface RistoroDao {
 	public List<Ristoro> getAllRistori();
 	public void associaArea(Ristoro ristoro, AreaNaturale areanaturale);
 	public void associaIti(Ristoro ristoro, Itinerario itinerario);
+	public List<Long> itinerariAssociati(long idRisto);
 
 }

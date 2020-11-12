@@ -68,6 +68,10 @@ public class RistoroController {
 		ristorodao.associaIti(ristoro, itinerario);
 	}
 	
+	public List<Long> getItiAssociati(long idRisto){
+		return ristorodao.itinerariAssociati(idRisto);
+	}
+	
 	
 	
 	

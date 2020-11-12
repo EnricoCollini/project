@@ -68,6 +68,10 @@ public class StrutturaRicettivaController {
 		strutturaricettivadao.associaIti(strutturaricettiva, itinerario);
 	}
 	
+	public List<Long> getItiAssociati(long idStru){
+		return strutturaricettivadao.itinerariAssociati(idStru);
+	}
+	
 	
 	
 }

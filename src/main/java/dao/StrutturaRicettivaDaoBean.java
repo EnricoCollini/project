@@ -66,4 +66,12 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 		
 	}
 
+	@Override
+	public List<Long> itinerariAssociati(long idStru) {
+		Query query2 = entitymanager.createQuery("SELECT i.id FROM Itinerario i JOIN i.strutturericettive s WHERE s.id = :idStru")
+				.setParameter("idStru", idStru);
+		List<Long> ress = query2.getResultList();
+		return ress;
+	}
+
 }

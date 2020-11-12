@@ -63,4 +63,12 @@ public class RistoroDaoBean implements RistoroDao {
 		
 	}
 
+	@Override
+	public List<Long> itinerariAssociati(long idRisto) {
+		Query query2 = entitymanager.createQuery("SELECT i.id FROM Itinerario i JOIN i.ristori r WHERE r.id = :idRisto")
+				.setParameter("idRisto", idRisto);
+		List<Long> ress = query2.getResultList();
+		return ress;
+	}
+
 }

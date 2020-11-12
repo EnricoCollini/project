@@ -1,4 +1,5 @@
 package rest.Services;
+import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -94,5 +95,14 @@ public class RistoroRestServiceEndpoint {
          .entity("associa is called, idRisto/idIti : " + date)
          .build();
  	}
+ 	
+    @GET
+	@Path("/itiAssociati/{idRisto}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response itiAssociati(@PathParam("idRisto") long idRisto) {
+		List<Long> ids = ristorocontroller.getItiAssociati(idRisto);
+		
+		return Response.ok(ids).build();
+	}
  	
 }

@@ -95,6 +95,33 @@ public class ItinerarioRestServiceEndpoint {
 		return Response.ok(ids).build();
 	}
 	
+	@GET
+	@Path("/ristoriAssociati/{idIti}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response ristoriAssociati(@PathParam("idIti") long idIti) {
+		List<Long> ids = itinerariocontroller.getRistoriAssociati(idIti);
+		
+		return Response.ok(ids).build();
+	}
+	
+	@GET
+	@Path("/struttureAssociate/{idIti}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response struttureAssociate(@PathParam("idIti") long idIti) {
+		List<Long> ids = itinerariocontroller.getStruttureAssociate(idIti);
+		
+		return Response.ok(ids).build();
+	}
+	
+	@GET
+	@Path("/puntiAssociati/{idIti}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response puntiiAssociati(@PathParam("idIti") long idIti) {
+		List<Long> ids = itinerariocontroller.getPuntiIntAssociati(idIti);
+		
+		return Response.ok(ids).build();
+	}
+	
 
 	
 

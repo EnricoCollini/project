@@ -60,4 +60,15 @@ public class ItinerarioController {
 	public List<Long> getAreeAssociate(long idIti){
 		return itinerariodao.areeAssociate(idIti);
 	}
+	public List<Long> getRistoriAssociati(long idIti){
+		return itinerariodao.ristoriAssociati(idIti);
+	}
+	
+	public List<Long> getStruttureAssociate(long idIti){
+		return itinerariodao.struttureAssociate(idIti);
+	}
+	
+	public List<Long> getPuntiIntAssociati(long idIti){
+		return itinerariodao.puntiAssociati(idIti);
+	}
 }

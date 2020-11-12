@@ -15,4 +15,5 @@ public interface PuntoInteresseGenericoDao {
 	public List<PuntoInteresseGenerico> getPuntiInteresseGenerici();
 	public void associaArea(PuntoInteresseGenerico punto, AreaNaturale areanaturale);
 	public void associaIti(PuntoInteresseGenerico punto, Itinerario itinerario);
+	public List<Long> itinerariAssociati(long idPunto);
 }

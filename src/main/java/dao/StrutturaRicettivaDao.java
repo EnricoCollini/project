@@ -18,4 +18,5 @@ public interface StrutturaRicettivaDao {
 	public List<StrutturaRicettiva> getAllStruttureRicettive();
 	public void associaArea(StrutturaRicettiva strutturaricettiva, AreaNaturale areanaturale);
 	public void associaIti(StrutturaRicettiva strutturaricettiva, Itinerario itinerario);
+	public List<Long> itinerariAssociati(long idStru);
 }

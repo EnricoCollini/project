@@ -65,6 +65,10 @@ public class PuntoInteresseGenericoController {
 		puntointeressegenericodao.associaIti(punto, itinerario);
 	}
 	
+	public List<Long> getItiAssociati(long idPunto){
+		return puntointeressegenericodao.itinerariAssociati(idPunto);
+	}
+	
 	
 
 }

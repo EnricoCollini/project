@@ -1,5 +1,7 @@
 package rest.Services;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -86,6 +88,15 @@ public class PuntoInteresseGenericoServiceEndpoint {
          .entity("associa is called, idPunto/idIti : " + date)
          .build();
  	}
+    
+    @GET
+	@Path("/itiAssociati/{idPunto}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response itiAssociati(@PathParam("idPunto") long idPunto) {
+		List<Long> ids = puntointeressecontroller.getItiAssociati(idPunto);
+		
+		return Response.ok(ids).build();
+	}
 	
 	
 	
