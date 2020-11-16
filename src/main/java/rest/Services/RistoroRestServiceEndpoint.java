@@ -96,6 +96,18 @@ public class RistoroRestServiceEndpoint {
          .build();
  	}
  	
+ 	@GET
+ 	@Path("/associaAmministratore/{idRisto}/{idAmministratore}")
+ 	public Response associaAmministratore(@PathParam("idRisto") long idRisto, @PathParam("idAmministratore") long idAmministratore) {
+ 		ristorocontroller.associaAmministratore(idRisto, idAmministratore);
+ 		
+        String date = idRisto + "/" + idAmministratore;
+
+        return Response.status(200)
+         .entity("associa is called, idRisto/idAmministratore : " + date)
+         .build();
+ 	}
+ 	
     @GET
 	@Path("/itiAssociati/{idRisto}")
 	@Produces({MediaType.APPLICATION_JSON})

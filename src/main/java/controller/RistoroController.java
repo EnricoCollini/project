@@ -6,10 +6,12 @@ import java.util.UUID;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AmministratoreDao;
 import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.RistoroDao;
 import dao.RistoroDaoBean;
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.Ristoro;
@@ -22,6 +24,8 @@ public class RistoroController {
 	private AreaNaturaleDao areanaturaledao;
 	@Inject
 	private ItinerarioDao itinerariodao;
+	@Inject
+	private AmministratoreDao amministratoredao;
 	
 	public Ristoro getRistoro(long id) {
 		return(ristorodao.getRistoro(id));
@@ -59,6 +63,12 @@ public class RistoroController {
 		System.out.println("ristoro trovato");
 		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
 		ristorodao.associaArea(ristoro, areanaturale);
+	}
+	
+	public void associaAmministratore(long idRisto, long idAmministratore) {
+		Ristoro ristoro = ristorodao.getRistoro(idRisto);
+		Amministratore amministratore = amministratoredao.getAmministratore(idAmministratore);
+		ristorodao.associaAmministratore(ristoro, amministratore);
 	}
 	
 	public void associaIti(long idRistoro, long idIti) {

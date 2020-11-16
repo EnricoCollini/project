@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import model.AreaNaturale;
 
@@ -39,7 +40,7 @@ public class Itinerario {
 	private List<PuntoInteresseGenerico> puntiinteressegenerici;
 	private List<Ristoro> ristori;
 	private List<StrutturaRicettiva> strutturericettive;
-	//TODO: add gpx file;
+	private Amministratore amministratore;
 	
 	
 	
@@ -218,6 +219,16 @@ public class Itinerario {
 		List<AreaNaturale> areenaturali = this.getAreenaturali();
 		areenaturali.add(areanaturale);
 		this.setAreenaturali(areenaturali);
+	}
+	
+	@ManyToOne
+	@JoinColumn(name = "AMMINISTRATORE_ID") 
+	public Amministratore getAmministratore() {
+		return amministratore;
+	}
+
+	public void setAmministratore(Amministratore amministratore) {
+		this.amministratore = amministratore;
 	}
 	
 }

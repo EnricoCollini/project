@@ -1,9 +1,12 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -12,6 +15,11 @@ public class Amministratore {
 	private long id;
 	private String email;
 	private String password;
+	private List<Ristoro> ristori;
+	private List<StrutturaRicettiva> strutturericettive;
+	private List<PuntoInteresseGenerico> puntiinteresse;
+	private List<Itinerario> itinerari;
+	private List<AreaNaturale> areenaturali;
 	
 	public Amministratore() {}
 	
@@ -44,6 +52,53 @@ public class Amministratore {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	@OneToMany(mappedBy = "amministratore")
+	public List<Ristoro> getRistori() {
+		return ristori;
+	}
+
+	public void setRistori(List<Ristoro> ristori) {
+		this.ristori = ristori;
+	}
+
+	@OneToMany(mappedBy = "amministratore")
+	public List<StrutturaRicettiva> getStrutturaricettiva() {
+		return strutturericettive;
+	}
+
+	public void setStrutturaricettiva(List<StrutturaRicettiva> strutturericettive) {
+		this.strutturericettive = strutturericettive;
+	}
+
+	@OneToMany(mappedBy = "amministratore")
+	public List<PuntoInteresseGenerico> getPuntointeressegenerico() {
+		return puntiinteresse;
+	}
+
+	public void setPuntointeressegenerico(List<PuntoInteresseGenerico> puntiinteresse) {
+		this.puntiinteresse = puntiinteresse;
+	}
+
+	@OneToMany(mappedBy = "amministratore")
+	public List<Itinerario> getItinerari() {
+		return itinerari;
+	}
+
+	
+	public void setItinerari(List<Itinerario> itinerari) {
+		this.itinerari = itinerari;
+	}
+
+	@OneToMany(mappedBy = "amministratore")
+	public List<AreaNaturale> getAreenaturali() {
+		return areenaturali;
+	}
+
+	public void setAreenaturali(List<AreaNaturale> areenaturali) {
+		this.areenaturali = areenaturali;
+	}
+
 
 
 }

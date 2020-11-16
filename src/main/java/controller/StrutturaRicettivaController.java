@@ -6,10 +6,12 @@ import java.util.UUID;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AmministratoreDao;
 import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.StrutturaRicettivaDao;
 import dao.StrutturaRicettivaDaoBean;
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.Ristoro;
@@ -26,6 +28,9 @@ public class StrutturaRicettivaController {
 	
 	@Inject
 	private ItinerarioDao itinerariodao;
+	
+	@Inject
+	private AmministratoreDao amministratoredao;
 	
 	public StrutturaRicettiva getStrutturaRicettiva(long id ) {
 		return(strutturaricettivadao.getStrutturaRicettiva(id));
@@ -60,6 +65,12 @@ public class StrutturaRicettivaController {
 		StrutturaRicettiva strutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(idStruttura);
 		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
 		strutturaricettivadao.associaArea(strutturaricettiva, areanaturale);
+	}
+	
+	public void associaAmministratore(long idStruttura, long idAmministratore) {
+		StrutturaRicettiva strutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(idStruttura);
+		Amministratore amministratore = amministratoredao.getAmministratore(idAmministratore);
+		strutturaricettivadao.associaAmministratore(strutturaricettiva, amministratore);
 	}
 	
 	public void associaIti(long idStruttura, long idIti) {

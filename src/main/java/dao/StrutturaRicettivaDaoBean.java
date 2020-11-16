@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.StrutturaRicettiva;
@@ -72,6 +73,12 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 				.setParameter("idStru", idStru);
 		List<Long> ress = query2.getResultList();
 		return ress;
+	}
+
+	@Override
+	public void associaAmministratore(StrutturaRicettiva strutturaricettiva, Amministratore amministratore) {
+		strutturaricettiva.setAmministratore(amministratore);
+		entitymanager.persist(strutturaricettiva);
 	}
 
 }

@@ -103,6 +103,18 @@ public class StrutturaRicettivaRestServiceEndpoint {
 		
 		return Response.ok(ids).build();
 	}
+    
+ 	@GET
+ 	@Path("/associaAmministratore/{idStru}/{idAmministratore}")
+ 	public Response associaAmministratore(@PathParam("idStru") long idStru, @PathParam("idAmministratore") long idAmministratore) {
+ 		strutturaricettivacontroller.associaAmministratore(idStru, idAmministratore);
+ 		
+        String date = idStru + "/" + idAmministratore;
+
+        return Response.status(200)
+         .entity("associa is called, idStru/idAmministratore : " + date)
+         .build();
+ 	}
  	
 
 }

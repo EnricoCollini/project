@@ -122,6 +122,18 @@ public class ItinerarioRestServiceEndpoint {
 		return Response.ok(ids).build();
 	}
 	
+ 	@GET
+ 	@Path("/associaAmministratore/{idIti}/{idAmministratore}")
+ 	public Response associaAmministratore(@PathParam("idIti") long idIti, @PathParam("idAmministratore") long idAmministratore) {
+ 		itinerariocontroller.associaAmministratore(idIti, idAmministratore);
+ 		
+        String date = idIti + "/" + idAmministratore;
+
+        return Response.status(200)
+         .entity("associa is called, idIti/idAmministratore : " + date)
+         .build();
+ 	}
+	
 
 	
 

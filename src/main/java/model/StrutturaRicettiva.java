@@ -33,6 +33,7 @@ public class StrutturaRicettiva {
 	private StrutturaRicettivaTypology strutturaricettivatipology;
 	private AreaNaturale areanaturale;
 	private List<Itinerario> itinerari;
+	private Amministratore amministratore;
 	
 
 	
@@ -165,5 +166,15 @@ public class StrutturaRicettiva {
 		List<Itinerario> itinerari = this.getItinerari();
 		itinerari.add(itinerario);
 		this.setItinerari(itinerari);
+	}
+	
+	@ManyToOne
+	@JoinColumn(name = "AMMINISTRATORE_ID") 
+	public Amministratore getAmministratore() {
+		return amministratore;
+	}
+
+	public void setAmministratore(Amministratore amministratore) {
+		this.amministratore = amministratore;
 	}
 }

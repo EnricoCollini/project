@@ -97,6 +97,18 @@ public class PuntoInteresseGenericoServiceEndpoint {
 		
 		return Response.ok(ids).build();
 	}
+    
+ 	@GET
+ 	@Path("/associaAmministratore/{idPunto}/{idAmministratore}")
+ 	public Response associaAmministratore(@PathParam("idPunto") long idPunto, @PathParam("idAmministratore") long idAmministratore) {
+ 		puntointeressecontroller.associaAmministratore(idPunto, idAmministratore);
+ 		
+        String date = idPunto + "/" + idAmministratore;
+
+        return Response.status(200)
+         .entity("associa is called, idPunto/idAmministratore : " + date)
+         .build();
+ 	}
 	
 	
 	

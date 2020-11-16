@@ -85,4 +85,16 @@ public class AreaNaturaleRestServiceEndpoint {
 		
 		return Response.ok(ids).build();
 	}
+    
+ 	@GET
+ 	@Path("/associaAmministratore/{idArea}/{idAmministratore}")
+ 	public Response associaAmministratore(@PathParam("idArea") long idArea, @PathParam("idAmministratore") long idAmministratore) {
+ 		areanaturalecontroller.associaAmministratore(idArea, idAmministratore);
+ 		
+        String date = idArea + "/" + idAmministratore;
+
+        return Response.status(200)
+         .entity("associa is called, idArea/idAmministratore : " + date)
+         .build();
+ 	}
 }

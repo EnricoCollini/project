@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.Ristoro;
@@ -69,6 +70,13 @@ public class RistoroDaoBean implements RistoroDao {
 				.setParameter("idRisto", idRisto);
 		List<Long> ress = query2.getResultList();
 		return ress;
+	}
+
+	@Override
+	public void associaAmministratore(Ristoro ristoro, Amministratore amministratore) {
+		ristoro.setAmministratore(amministratore);
+		entitymanager.persist(ristoro);
+		
 	}
 
 }

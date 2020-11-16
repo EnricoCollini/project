@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.PuntoInteresseGenerico;
@@ -70,6 +71,13 @@ public class PuntoInteresseGenericoDaoBean implements PuntoInteresseGenericoDao 
 				.setParameter("idPunto", idPunto);
 		List<Long> ress = query2.getResultList();
 		return ress;
+	}
+
+	@Override
+	public void associaAmministratore(PuntoInteresseGenerico punto, Amministratore amministratore) {
+		punto.setAmministratore(amministratore);
+		entitymanager.persist(punto);
+		
 	}
 
 }

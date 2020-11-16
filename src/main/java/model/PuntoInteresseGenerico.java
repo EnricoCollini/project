@@ -25,6 +25,7 @@ public class PuntoInteresseGenerico {
 	private Float longitude;
 	private AreaNaturale areanaturale;
 	private List<Itinerario> itinerari;
+	private Amministratore amministratore;
 	
 	
 	@Id
@@ -110,6 +111,16 @@ public class PuntoInteresseGenerico {
 		List<Itinerario> itinerari = this.getItinerari();
 		itinerari.add(itinerario);
 		this.setItinerari(itinerari);
+	}
+	
+	@ManyToOne
+	@JoinColumn(name = "AMMINISTRATORE_ID") 
+	public Amministratore getAmministratore() {
+		return amministratore;
+	}
+
+	public void setAmministratore(Amministratore amministratore) {
+		this.amministratore = amministratore;
 	}
 
 }

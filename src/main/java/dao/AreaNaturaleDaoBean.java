@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
+import model.Amministratore;
 import model.AreaNaturale;
 
 @Stateless
@@ -56,6 +56,13 @@ public class AreaNaturaleDaoBean implements AreaNaturaleDao {
 				.setParameter("idArea", idArea);
 		List<Long> ress = query2.getResultList();
 		return ress;
+	}
+
+	@Override
+	public void associaAmministratore(AreaNaturale areanaturale, Amministratore amministratore) {
+		areanaturale.setAmministratore(amministratore);
+		entitymanager.persist(areanaturale);
+		
 	}
 
 }

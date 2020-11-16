@@ -5,9 +5,12 @@ import java.util.UUID;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AmministratoreDao;
 import dao.AreaNaturaleDao;
 import dao.AreaNaturaleDaoBean;
+import model.Amministratore;
 import model.AreaNaturale;
+import model.Itinerario;
 
 @Stateless
 public class AreaNaturaleController {
@@ -15,6 +18,9 @@ public class AreaNaturaleController {
 	
 	@Inject
 	private AreaNaturaleDao areanaturaledao;
+	
+	@Inject
+	private AmministratoreDao amministratoredao;
 	
 	
 	public AreaNaturale getAreaNaturale(long number) {
@@ -41,6 +47,12 @@ public class AreaNaturaleController {
 	public void deleteAreaNaturale(long number) {
 		AreaNaturale deleteareanaturale = areanaturaledao.getAreaNaturale(number);
 		areanaturaledao.deleteAreaNaturale(deleteareanaturale);
+	}
+	
+	public void associaAmministratore(long idArea, long idAmministratore) {
+		AreaNaturale areanaturale = areanaturaledao.getAreaNaturale(idArea);
+		Amministratore amministratore = amministratoredao.getAmministratore(idAmministratore);
+		areanaturaledao.associaAmministratore(areanaturale, amministratore);
 	}
 	
 	public List<AreaNaturale> getAllAreeNaturalii(){

@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import javax.ejb.Stateless;
 
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.Ristoro;
@@ -19,4 +20,5 @@ public interface StrutturaRicettivaDao {
 	public void associaArea(StrutturaRicettiva strutturaricettiva, AreaNaturale areanaturale);
 	public void associaIti(StrutturaRicettiva strutturaricettiva, Itinerario itinerario);
 	public List<Long> itinerariAssociati(long idStru);
+	public void associaAmministratore(StrutturaRicettiva strutturaricettiva, Amministratore amministratore);
 }

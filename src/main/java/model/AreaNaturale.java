@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
@@ -42,6 +43,7 @@ public class AreaNaturale{
 	private List<StrutturaRicettiva> strutturaricettiva;
 	private List<PuntoInteresseGenerico> puntointeressegenerico;
 	private List<Itinerario> itinerari;
+	private Amministratore amministratore;
 	
 	
 	
@@ -177,6 +179,16 @@ public class AreaNaturale{
 
 	public void setItinerari(List<Itinerario> itinerari) {
 		this.itinerari = itinerari;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name = "AMMINISTRATORE_ID") 
+	public Amministratore getAmministratore() {
+		return amministratore;
+	}
+
+	public void setAmministratore(Amministratore amministratore) {
+		this.amministratore = amministratore;
 	}
 	
 	

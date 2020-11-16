@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.PuntoInteresseGenerico;
@@ -16,4 +17,5 @@ public interface PuntoInteresseGenericoDao {
 	public void associaArea(PuntoInteresseGenerico punto, AreaNaturale areanaturale);
 	public void associaIti(PuntoInteresseGenerico punto, Itinerario itinerario);
 	public List<Long> itinerariAssociati(long idPunto);
+	public void associaAmministratore(PuntoInteresseGenerico punto, Amministratore amministratore);
 }

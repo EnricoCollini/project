@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 
@@ -85,6 +86,13 @@ public class ItinerarioDaoBean implements ItinerarioDao {
 				.setParameter("idIti", idIti);
 		List<Long> ress = query5.getResultList();
 		return ress;
+	}
+
+	@Override
+	public void associaAmministratore(Itinerario itinerario, Amministratore amministratore) {
+		itinerario.setAmministratore(amministratore);
+		entitymanager.persist(itinerario);
+		
 	}
 	
 }

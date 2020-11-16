@@ -5,12 +5,15 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import dao.AmministratoreDao;
 import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.PuntoInteresseGenericoDao;
+import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.PuntoInteresseGenerico;
+import model.Ristoro;
 import model.StrutturaRicettiva;
 
 @Stateless
@@ -24,6 +27,9 @@ public class PuntoInteresseGenericoController {
 	
 	@Inject
 	private ItinerarioDao itinerariodao;
+	
+	@Inject
+	private AmministratoreDao amministratoredao;
 	
 	public PuntoInteresseGenerico getPuntoInteresseGenrico(long id) {
 		return puntointeressegenericodao.getPuntoInteresseGenerico(id);
@@ -63,6 +69,12 @@ public class PuntoInteresseGenericoController {
 		PuntoInteresseGenerico punto = puntointeressegenericodao.getPuntoInteresseGenerico(idPunto);
 		Itinerario itinerario = itinerariodao.getItinerario(idIti);
 		puntointeressegenericodao.associaIti(punto, itinerario);
+	}
+	
+	public void associaAmministratore(long idPunto, long idAmministratore) {
+		PuntoInteresseGenerico punto = puntointeressegenericodao.getPuntoInteresseGenerico(idPunto);
+		Amministratore amministratore = amministratoredao.getAmministratore(idAmministratore);
+		puntointeressegenericodao.associaAmministratore(punto, amministratore);
 	}
 	
 	public List<Long> getItiAssociati(long idPunto){
