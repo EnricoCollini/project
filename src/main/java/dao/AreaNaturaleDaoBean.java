@@ -20,7 +20,8 @@ public class AreaNaturaleDaoBean implements AreaNaturaleDao {
 	
 	@Override
 	public AreaNaturale getAreaNaturale(long number ) {
-		return entitymanager.find(AreaNaturale.class,number);
+		AreaNaturale area = entitymanager.find(AreaNaturale.class,number);
+		return area;
 	}
 
 	@Override
@@ -44,9 +45,10 @@ public class AreaNaturaleDaoBean implements AreaNaturaleDao {
 	}
 
 	@Override
-	public List<AreaNaturale> getAllAreeNaturalii() {
-		Query query = entitymanager.createQuery("SELECT a FROM AreaNaturale a");
-		List<AreaNaturale> ress = query.getResultList();
+	public List<Long> getAllAreeNaturalii() {
+		Query query = entitymanager.createQuery("SELECT a.id FROM AreaNaturale a");
+		List<Long> ress = query.getResultList();
+		System.out.println("RISULTATO: " + ress);
 		return ress;
 	}
 

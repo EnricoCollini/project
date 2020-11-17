@@ -1,4 +1,5 @@
 package controller;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -8,6 +9,8 @@ import javax.inject.Inject;
 import dao.AmministratoreDao;
 import dao.AreaNaturaleDao;
 import dao.AreaNaturaleDaoBean;
+import dto.AreaNaturaleDTO;
+import dto.mapper.AreaNaturaleMapper;
 import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
@@ -22,9 +25,13 @@ public class AreaNaturaleController {
 	@Inject
 	private AmministratoreDao amministratoredao;
 	
+	@Inject
+	private AreaNaturaleMapper areaMapper;
 	
-	public AreaNaturale getAreaNaturale(long number) {
-		return areanaturaledao.getAreaNaturale(number);
+	
+	public AreaNaturaleDTO getAreaNaturale(long number) {
+		return areaMapper.convertToDTO(number);
+
 	}
 	
 	public void createAreaNaturale(AreaNaturale areanaturale) {
@@ -55,8 +62,13 @@ public class AreaNaturaleController {
 		areanaturaledao.associaAmministratore(areanaturale, amministratore);
 	}
 	
-	public List<AreaNaturale> getAllAreeNaturalii(){
-		return(areanaturaledao.getAllAreeNaturalii());
+	public List<AreaNaturaleDTO> getAllAreeNaturalii(){
+		List<Long> areeId = areanaturaledao.getAllAreeNaturalii();
+		List<AreaNaturaleDTO> aree = new ArrayList<AreaNaturaleDTO>();
+		for (long id: areeId) {
+			aree.add(areaMapper.convertToDTO(id));
+		}
+		return aree;
 	}
 	
 	public List<Long> getItiAssociati(long idArea){

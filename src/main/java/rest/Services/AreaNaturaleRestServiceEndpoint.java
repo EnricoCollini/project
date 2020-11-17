@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import model.AreaNaturale;
 import controller.AreaNaturaleController;
+import dto.AreaNaturaleDTO;
 
 @Path("/areanaturale")
 public class AreaNaturaleRestServiceEndpoint {
@@ -42,8 +43,8 @@ public class AreaNaturaleRestServiceEndpoint {
     @Path("/get/id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAreaNaturale(@PathParam("id") long id) {
-        AreaNaturale areanaturale = areanaturalecontroller.getAreaNaturale(id);
-        return Response.ok(areanaturale).build();
+        AreaNaturaleDTO areaDto = areanaturalecontroller.getAreaNaturale(id);
+        return Response.ok(areaDto).build();
     }
     
   	@GET

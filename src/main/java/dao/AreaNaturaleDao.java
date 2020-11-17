@@ -10,7 +10,7 @@ public interface AreaNaturaleDao {
 	public void createAreaNaturale(AreaNaturale areanaturale);
 	public void updateAreaNaturale(AreaNaturale areanaturale);
 	public void deleteAreaNaturale(AreaNaturale areanaturale);
-	public List<AreaNaturale> getAllAreeNaturalii();
+	public List<Long> getAllAreeNaturalii();
 	public List<Long> itinerariAssociati(long idArea);
 	public void associaAmministratore(AreaNaturale areanaturale, Amministratore amministratore);
 }
