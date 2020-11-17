@@ -17,6 +17,7 @@ import javax.ws.rs.core.Response;
 import controller.AreaNaturaleController;
 import controller.RistoroController;
 import controller.StrutturaRicettivaController;
+import dto.StrutturaRicettivaDTO;
 import model.Ristoro;
 import model.StrutturaRicettiva;
 
@@ -36,8 +37,8 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	@Path("/get/id/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStrutturaRicettiva(@PathParam("id") long id) {
-		StrutturaRicettiva strutturaricettiva = strutturaricettivacontroller.getStrutturaRicettiva(id);
-	    return Response.ok(strutturaricettiva).build();
+		StrutturaRicettivaDTO strutturaDto = strutturaricettivacontroller.getStrutturaRicettiva(id);
+	    return Response.ok(strutturaDto).build();
 	}
 	    
 	@GET

@@ -47,10 +47,10 @@ public class StrutturaRicettivaDaoBean implements StrutturaRicettivaDao {
 	}
 
 	@Override
-	public List<StrutturaRicettiva> getAllStruttureRicettive() {
-		Query query = entitymanager.createQuery("SELECT s FROM StrutturaRicettiva s");
-		List<StrutturaRicettiva> strutturericettive = query.getResultList();
-		return strutturericettive;
+	public List<Long> getAllStruttureRicettive() {
+		Query query = entitymanager.createQuery("SELECT s.id FROM StrutturaRicettiva s");
+		List<Long> strutturericettiveIds = query.getResultList();
+		return strutturericettiveIds;
 	}
 
 	@Override

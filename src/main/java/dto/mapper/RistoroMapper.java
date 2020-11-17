@@ -34,7 +34,6 @@ public class RistoroMapper {
 	
 	public void transferToEntity(RistoroDTO ristoroDto, long id) {
 		Ristoro ristoro = ristorodao.getRistoro(id);
-		ristoro.setId(ristoroDto.getId());
 		ristoro.setName(ristoroDto.getName());
 		ristoro.setCity(ristoroDto.getCity());
 		ristoro.setLatitude(ristoroDto.getLatitude());

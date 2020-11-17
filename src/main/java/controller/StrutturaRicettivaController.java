@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -11,6 +12,10 @@ import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.StrutturaRicettivaDao;
 import dao.StrutturaRicettivaDaoBean;
+import dto.RistoroDTO;
+import dto.StrutturaRicettivaDTO;
+import dto.mapper.RistoroMapper;
+import dto.mapper.StrutturaRicettivaMapper;
 import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
@@ -32,8 +37,11 @@ public class StrutturaRicettivaController {
 	@Inject
 	private AmministratoreDao amministratoredao;
 	
-	public StrutturaRicettiva getStrutturaRicettiva(long id ) {
-		return(strutturaricettivadao.getStrutturaRicettiva(id));
+	@Inject
+	private StrutturaRicettivaMapper strutturaMapper;
+	
+	public StrutturaRicettivaDTO getStrutturaRicettiva(long id ) {
+		return(strutturaMapper.convertToDto(id));
 	}
 	public void createStrutturaRicettiva(StrutturaRicettiva strutturaricettiva) {
 		strutturaricettivadao.createStrutturaRicettiva(strutturaricettiva);
@@ -57,8 +65,14 @@ public class StrutturaRicettivaController {
 		StrutturaRicettiva strutturaricettiva = strutturaricettivadao.getStrutturaRicettiva(id);
 		strutturaricettivadao.deleteStrutturaRicettiva(strutturaricettiva);
 	}
-	public List<StrutturaRicettiva> getAllStruttureRicettive(){
-		return(strutturaricettivadao.getAllStruttureRicettive());
+
+	public List<StrutturaRicettivaDTO> getAllStruttureRicettive(){
+		List<Long> strutturaId = strutturaricettivadao.getAllStruttureRicettive();
+		List<StrutturaRicettivaDTO> strutture = new ArrayList<StrutturaRicettivaDTO>();
+		for (long id: strutturaId) {
+			strutture.add(strutturaMapper.convertToDto(id));
+		}
+		return strutture;
 	}
 	
 	public void associaArea(long idStruttura, long idArea) {
