@@ -13,7 +13,7 @@ public interface RistoroDao {
 	public void createRistoro(Ristoro ristoro);
 	public void updateRistoro(Ristoro ristoro);
 	public void deleteRistoro(Ristoro ristoro);
-	public List<Ristoro> getAllRistori();
+	public List<Long> getAllRistori();
 	public void associaArea(Ristoro ristoro, AreaNaturale areanaturale);
 	public void associaIti(Ristoro ristoro, Itinerario itinerario);
 	public List<Long> itinerariAssociati(long idRisto);

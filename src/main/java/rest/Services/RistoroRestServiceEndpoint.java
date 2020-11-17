@@ -19,6 +19,7 @@ import model.Itinerario;
 import model.Ristoro;
 import controller.AreaNaturaleController;
 import controller.RistoroController;
+import dto.RistoroDTO;
 
 @Path("/ristoro")
 public class RistoroRestServiceEndpoint {
@@ -35,9 +36,9 @@ public class RistoroRestServiceEndpoint {
     @GET
     @Path("/get/id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAreaNaturale(@PathParam("id") long id) {
-    	Ristoro ristoro = ristorocontroller.getRistoro(id);
-        return Response.ok(ristoro).build();
+    public Response getRistoro(@PathParam("id") long id) {
+    	RistoroDTO ristorodto = ristorocontroller.getRistoro(id);
+        return Response.ok(ristorodto).build();
     }
 	    
 	    

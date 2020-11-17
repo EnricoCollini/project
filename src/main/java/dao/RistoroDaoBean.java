@@ -44,10 +44,10 @@ public class RistoroDaoBean implements RistoroDao {
 	}
 
 	@Override
-	public List<Ristoro> getAllRistori() {
-		Query query = entitymanager.createQuery("SELECT r From Ristoro r");
-		List<Ristoro> ristori = query.getResultList();
-		return ristori;
+	public List<Long> getAllRistori() {
+		Query query = entitymanager.createQuery("SELECT r.id From Ristoro r");
+		List<Long> ristoriIds = query.getResultList();
+		return ristoriIds;
 	}
 
 	@Override

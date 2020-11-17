@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -11,6 +12,9 @@ import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.RistoroDao;
 import dao.RistoroDaoBean;
+import dto.AreaNaturaleDTO;
+import dto.RistoroDTO;
+import dto.mapper.RistoroMapper;
 import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
@@ -26,9 +30,11 @@ public class RistoroController {
 	private ItinerarioDao itinerariodao;
 	@Inject
 	private AmministratoreDao amministratoredao;
+	@Inject
+	private RistoroMapper ristoroMapper;
 	
-	public Ristoro getRistoro(long id) {
-		return(ristorodao.getRistoro(id));
+	public RistoroDTO getRistoro(long id) {
+		return(ristoroMapper.convertToDTO(id));
 	}
 	
 	public void createRistoro(Ristoro ristoro) {
@@ -54,8 +60,13 @@ public class RistoroController {
 		ristorodao.deleteRistoro(ristoro);
 	}
 	
-	public List<Ristoro> getAllRistori(){
-		return(ristorodao.getAllRistori());
+	public List<RistoroDTO> getAllRistori(){
+		List<Long> ristoroId = ristorodao.getAllRistori();
+		List<RistoroDTO> ristori = new ArrayList<RistoroDTO>();
+		for (long id: ristoroId) {
+			ristori.add(ristoroMapper.convertToDTO(id));
+		}
+		return ristori;
 	}
 	
 	public void associaArea(long idRistoro, long idArea) {
