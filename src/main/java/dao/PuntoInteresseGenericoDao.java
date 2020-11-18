@@ -13,7 +13,7 @@ public interface PuntoInteresseGenericoDao {
 	public void createPuntoInteresseGenerico(PuntoInteresseGenerico puntointeressegenerico);
 	public void updatePuntoInteresseGenerico(PuntoInteresseGenerico puntointeressegenerico);
 	public void deletePuntoInteresseGenerico(PuntoInteresseGenerico puntointeressegenerico);
-	public List<PuntoInteresseGenerico> getPuntiInteresseGenerici();
+	public List<Long> getPuntiInteresseGenerici();
 	public void associaArea(PuntoInteresseGenerico punto, AreaNaturale areanaturale);
 	public void associaIti(PuntoInteresseGenerico punto, Itinerario itinerario);
 	public List<Long> itinerariAssociati(long idPunto);

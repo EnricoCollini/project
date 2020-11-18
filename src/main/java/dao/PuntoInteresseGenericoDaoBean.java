@@ -45,10 +45,10 @@ public class PuntoInteresseGenericoDaoBean implements PuntoInteresseGenericoDao 
 	}
 
 	@Override
-	public List<PuntoInteresseGenerico> getPuntiInteresseGenerici() {
-		Query query = entitymanager.createQuery("SELECT p FROM PuntoInteresseGenerico p");
-		List<PuntoInteresseGenerico> ress = query.getResultList();
-		return ress;
+	public List<Long> getPuntiInteresseGenerici() {
+		Query query = entitymanager.createQuery("SELECT p.id FROM PuntoInteresseGenerico p");
+		List<Long> puntiIds = query.getResultList();
+		return puntiIds;
 	}
 
 	@Override

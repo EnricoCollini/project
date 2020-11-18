@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -9,6 +10,9 @@ import dao.AmministratoreDao;
 import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.PuntoInteresseGenericoDao;
+import dto.PuntoInteresseGenericoDTO;
+import dto.RistoroDTO;
+import dto.mapper.PuntoInteresseGenericoMapper;
 import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
@@ -31,8 +35,11 @@ public class PuntoInteresseGenericoController {
 	@Inject
 	private AmministratoreDao amministratoredao;
 	
-	public PuntoInteresseGenerico getPuntoInteresseGenrico(long id) {
-		return puntointeressegenericodao.getPuntoInteresseGenerico(id);
+	@Inject
+	private PuntoInteresseGenericoMapper puntoMapper;
+	
+	public PuntoInteresseGenericoDTO getPuntoInteresseGenrico(long id) {
+		return(puntoMapper.convertToDTO(id));
 	}
 	
 	public void createPuntoInteresseGenerico(PuntoInteresseGenerico puntointeressegenerico) {
@@ -55,8 +62,13 @@ public class PuntoInteresseGenericoController {
 		puntointeressegenericodao.deletePuntoInteresseGenerico(puntointeressegenerico);
 	}
 	
-	public List<PuntoInteresseGenerico> getAllPuntiInteresseGenerici(){
-		return(puntointeressegenericodao.getPuntiInteresseGenerici());
+	public List<PuntoInteresseGenericoDTO> getAllPuntiInteresseGenerici(){
+		List<Long> puntoId = puntointeressegenericodao.getPuntiInteresseGenerici();
+		List<PuntoInteresseGenericoDTO> punti = new ArrayList<PuntoInteresseGenericoDTO>();
+		for (long id: puntoId) {
+			punti.add(puntoMapper.convertToDTO(id));
+		}
+		return punti;
 	}
 	
 	public void associaArea(long idPunto, long idArea) {

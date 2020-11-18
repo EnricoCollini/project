@@ -14,6 +14,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import controller.PuntoInteresseGenericoController;
+import dto.PuntoInteresseGenericoDTO;
+import dto.RistoroDTO;
 import model.PuntoInteresseGenerico;
 
 @Path("/puntointeressegenerico")
@@ -35,8 +37,8 @@ public class PuntoInteresseGenericoServiceEndpoint {
 	@Path("/get/id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getPuntoInteresseGenerico(@PathParam("id") long id) {
-        PuntoInteresseGenerico puntointeressegenerico = puntointeressecontroller.getPuntoInteresseGenrico(id);
-        return Response.ok(puntointeressegenerico).build();
+		PuntoInteresseGenericoDTO puntodto = puntointeressecontroller.getPuntoInteresseGenrico(id);
+        return Response.ok(puntodto).build();
     }
 	
 	//Create
