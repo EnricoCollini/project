@@ -47,9 +47,10 @@ public class InitializerRistori {
 	  public void init() throws FileNotFoundException {
 		Gson g = new Gson();
 	    try {
-	    	ristori =  new String(Files.readAllBytes(Paths.get("/home/andrea/eclipse-workspace/project/src/main/resources/Ristori.json")));
+	    	ristori =  new String(Files.readAllBytes(Paths.get("/home/enrico/eclipse-workspace/project/src/main/resources/Ristori.json")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	    

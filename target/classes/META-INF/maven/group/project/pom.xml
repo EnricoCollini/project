@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>group</groupId>
-  <artifactId>project</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>group</groupId>
+	<artifactId>project</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
 		<!-- Wildfly Swarm Fractions -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -12,77 +13,67 @@
 			<version>8.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
 			<version>2.3.0</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.12</version>
 			<scope>compile</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-math3</artifactId>
 			<version>3.2</version>
 		</dependency>
-		
-
-
 		<dependency>
 			<groupId>org.javatuples</groupId>
 			<artifactId>javatuples</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+		<!-- <dependency> <groupId>com.google.code.gson</groupId> <artifactId>gson</artifactId> 
+			<version>2.6.2</version> </dependency> -->
+		<!-- <dependency> <groupId>it.unifi.oris</groupId> <artifactId>sirio</artifactId> 
+			<version>1.1.0</version> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
-   			<groupId>com.google.code.gson</groupId>
-    		<artifactId>gson</artifactId>
-    		<version>2.6.2</version>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
 		</dependency>
-		
-
-		<!-- <dependency>
-			<groupId>it.unifi.oris</groupId>
-			<artifactId>sirio</artifactId>
-			<version>1.1.0</version>
-		</dependency> -->
-
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20180813</version>
 		</dependency>
-
-
 		<!-- https://mvnrepository.com/artifact/javax.ejb/javax.ejb-api -->
 		<dependency>
 			<groupId>javax.ejb</groupId>
 			<artifactId>javax.ejb-api</artifactId>
 			<version>3.2.2</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>javax.persistence-api</artifactId>
 			<version>2.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.6.2</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -90,7 +81,6 @@
 			<version>1.0.2.Final</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -98,7 +88,6 @@
 			<version>5.3.6.Final</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -106,7 +95,6 @@
 			<version>5.3.6.Final</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -114,21 +102,14 @@
 			<version>5.3.6.Final</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-		
-		<!--
-		<dependency> 
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-multipart-provider</artifactId> 
-			<version>3.6.1.Final</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.jboss.resteasy</groupId> <artifactId>resteasy-multipart-provider</artifactId> 
+			<version>3.6.1.Final</version> </dependency> -->
 	</dependencies>
-
 	<build>
 		<pluginManagement>
 			<plugins>

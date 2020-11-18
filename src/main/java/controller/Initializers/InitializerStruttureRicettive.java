@@ -45,7 +45,7 @@ public class InitializerStruttureRicettive {
 	  public void init() throws FileNotFoundException {
 		Gson g = new Gson();
 	    try {
-	    	strutturericettive =  new String(Files.readAllBytes(Paths.get("/home/andrea/eclipse-workspace/project/src/main/resources/StruttureRicettive.json")));
+	    	strutturericettive =  new String(Files.readAllBytes(Paths.get("/home/enrico/eclipse-workspace/project/src/main/resources/StruttureRicettive.json")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
