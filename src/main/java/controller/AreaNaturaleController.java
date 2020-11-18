@@ -74,4 +74,17 @@ public class AreaNaturaleController {
 	public List<Long> getItiAssociati(long idArea){
 		return areanaturaledao.itinerariAssociati(idArea);
 	}
+	
+	public List<Long> getRistoAssociati(long idArea){
+		return areanaturaledao.ristoriAssociati(idArea);
+	}
+	
+	public List<Long> getPuntiInteresseAssociati(long idArea){
+		return areanaturaledao.puntiInteresseAssociati(idArea);
+	}
+	
+	public List<Long> getStruttureAssociate(long idArea){
+		return areanaturaledao.struttureAssociate(idArea);
+	}
+	
 }

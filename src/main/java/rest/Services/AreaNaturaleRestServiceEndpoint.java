@@ -87,6 +87,35 @@ public class AreaNaturaleRestServiceEndpoint {
 		return Response.ok(ids).build();
 	}
     
+    @GET
+   	@Path("/ristoAssociati/{idArea}")
+   	@Produces({MediaType.APPLICATION_JSON})
+   	public Response ristoAssociati(@PathParam("idArea") long idArea) {
+   		List<Long> ids = areanaturalecontroller.getRistoAssociati(idArea);
+   		
+   		return Response.ok(ids).build();
+   	}
+    
+    @GET
+   	@Path("/puntiAssociati/{idArea}")
+   	@Produces({MediaType.APPLICATION_JSON})
+   	public Response puntiAssociati(@PathParam("idArea") long idArea) {
+   		List<Long> ids = areanaturalecontroller.getPuntiInteresseAssociati(idArea);
+   		
+   		return Response.ok(ids).build();
+   	}
+    
+    @GET
+   	@Path("/struttureAssociati/{idArea}")
+   	@Produces({MediaType.APPLICATION_JSON})
+   	public Response struttureAssociati(@PathParam("idArea") long idArea) {
+   		List<Long> ids = areanaturalecontroller.getStruttureAssociate(idArea);
+   		
+   		return Response.ok(ids).build();
+   	}
+    
+    
+    
  	@GET
  	@Path("/associaAmministratore/{idArea}/{idAmministratore}")
  	public Response associaAmministratore(@PathParam("idArea") long idArea, @PathParam("idAmministratore") long idAmministratore) {

@@ -12,5 +12,8 @@ public interface AreaNaturaleDao {
 	public void deleteAreaNaturale(AreaNaturale areanaturale);
 	public List<Long> getAllAreeNaturalii();
 	public List<Long> itinerariAssociati(long idArea);
+	public List<Long> ristoriAssociati(long idArea);
+	public List<Long> puntiInteresseAssociati(long idArea);
+	public List<Long> struttureAssociate(long idArea);
 	public void associaAmministratore(AreaNaturale areanaturale, Amministratore amministratore);
 }
