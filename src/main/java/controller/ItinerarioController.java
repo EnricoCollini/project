@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -10,6 +11,8 @@ import dao.AmministratoreDao;
 import dao.AreaNaturaleDao;
 import dao.ItinerarioDao;
 import dao.ItinerarioDaoBean;
+import dto.ItinerarioDTO;
+import dto.mapper.ItinerarioMapper;
 import model.Amministratore;
 import model.AreaNaturale;
 import model.Itinerario;
@@ -26,8 +29,11 @@ public class ItinerarioController {
 	@Inject
 	private AmministratoreDao amministratoredao;
 	
-	public Itinerario getItinerario(long id ) {
-		return(itinerariodao.getItinerario(id));
+	@Inject
+	private ItinerarioMapper itinerarioMapper;
+	
+	public ItinerarioDTO getItinerario(long id ) {
+		return(itinerarioMapper.convertToDto(id));
 	}
 	public void createItinerario(Itinerario itinerario) {
 		itinerariodao.createItinerario(itinerario);
@@ -52,8 +58,14 @@ public class ItinerarioController {
 		Itinerario itinerario = itinerariodao.getItinerario(id);
 		itinerariodao.deleteItinerario(itinerario);
 	}
-	public List<Itinerario> getAllItinerari(){
-		return(itinerariodao.getAllItinerari());
+	public List<ItinerarioDTO> getAllItinerari(){
+		List<Long> itinerarioId = itinerariodao.getAllItinerari();
+		List<ItinerarioDTO> itinerari = new ArrayList<ItinerarioDTO>();
+		for (long id:itinerarioId) {
+			itinerari.add(itinerarioMapper.convertToDto(id));
+		}
+		return itinerari;
+		
 	}
 	
 	public void associaArea(long idItinerario, long idArea) {

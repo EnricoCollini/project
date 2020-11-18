@@ -12,7 +12,7 @@ public interface ItinerarioDao {
 	public void createItinerario(Itinerario itinerario);
 	public void updateItinerario(Itinerario itinerario);
 	public void deleteItinerario(Itinerario itinerario);
-	public List<Itinerario> getAllItinerari();
+	public List<Long> getAllItinerari();
 	public void associaArea(Itinerario itinerario, AreaNaturale areanaturale);
 	public List<Long> areeAssociate(long idIti);
 	public List<Long> ristoriAssociati(long idIti);

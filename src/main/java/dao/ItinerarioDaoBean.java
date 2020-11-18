@@ -43,10 +43,10 @@ public class ItinerarioDaoBean implements ItinerarioDao {
 	}
 
 	@Override
-	public List<Itinerario> getAllItinerari() {
-		Query query = entitymanager.createQuery("SELECT a FROM Itinerario a");
-		List<Itinerario> ress = query.getResultList();
-		return ress;
+	public List<Long> getAllItinerari() {
+		Query query = entitymanager.createQuery("SELECT a.id FROM Itinerario a");
+		List<Long> itinerariIds = query.getResultList();
+		return itinerariIds;
 	}
 
 	@Override

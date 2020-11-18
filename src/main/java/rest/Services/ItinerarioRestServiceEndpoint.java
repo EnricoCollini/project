@@ -17,6 +17,7 @@ import javax.ws.rs.core.Response;
 
 import controller.ItinerarioController;
 import controller.StrutturaRicettivaController;
+import dto.ItinerarioDTO;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.StrutturaRicettiva;
@@ -38,8 +39,8 @@ public class ItinerarioRestServiceEndpoint {
     @Path("/get/id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAreaNaturale(@PathParam("id") long id) {
-        Itinerario itinerario = itinerariocontroller.getItinerario(id);
-        return Response.ok(itinerario).build();
+        ItinerarioDTO itinerariodto = itinerariocontroller.getItinerario(id);
+        return Response.ok(itinerariodto).build();
     }
 	    
 	@GET
