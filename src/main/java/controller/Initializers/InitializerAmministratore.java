@@ -16,7 +16,6 @@ import com.google.gson.JsonObject;
 
 import dao.AmministratoreDao;
 import model.Amministratore;
-import model.Ristoro;
 
 @Startup
 @Singleton
@@ -30,7 +29,7 @@ public class InitializerAmministratore {
 	  public void init() throws FileNotFoundException {
 		Gson g = new Gson();
 	    try {
-	    	amministratori =  new String(Files.readAllBytes(Paths.get("/home/andrea/eclipse-workspace/project/src/main/resources/Amministratori.json")));
+	    	amministratori =  new String(Files.readAllBytes(Paths.get("/home/enrico/eclipse-workspace/project/src/main/resources/Amministratori.json")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
