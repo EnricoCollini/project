@@ -22,6 +22,7 @@ import dao.AmministratoreDao;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import model.Amministratore;
+import rest.Secured;
 
 @Path("/auth")
 public class LoginRestServicesEndpoint {
@@ -30,29 +31,30 @@ public class LoginRestServicesEndpoint {
 	AmministratoreController amministratorecontroller;
 	
 
+	@Secured
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	public String sayHello() {
 		return "Hello World";
 	}
 	
-
-    @GET
-    @Path("/test")
-    public Response test(@Context HttpHeaders headers) {
-        String jwtSent = headers.getRequestHeader("authorization").get(0).split(" ")[1];
-        if(amministratorecontroller.checkIfAuth(jwtSent)) {
-            return Response.status(200)
-                    .entity("The user can do the request"+ jwtSent)
-                    .build();
-        }
-        else {
-        	 return Response.status(Status.UNAUTHORIZED)
-                     .entity("The user is not authorized"+ jwtSent)
-                     .build();
-        }
-    }
-	
+//
+//    @GET
+//    @Path("/test")
+//    public Response test(@Context HttpHeaders headers) {
+//        String jwtSent = headers.getRequestHeader("authorization").get(0).split(" ")[1];
+//        if(amministratorecontroller.checkIfAuth(jwtSent)) {
+//            return Response.status(200)
+//                    .entity("The user can do the request"+ jwtSent)
+//                    .build();
+//        }
+//        else {
+//        	 return Response.status(Status.UNAUTHORIZED)
+//                     .entity("The user is not authorized"+ jwtSent)
+//                     .build();
+//        }
+//    }
+//	
 	
 	@POST
 	@Path("/genTokenForUser")
