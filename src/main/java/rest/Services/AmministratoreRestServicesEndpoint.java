@@ -18,6 +18,15 @@ public class AmministratoreRestServicesEndpoint {
 	@Inject
 	private AmministratoreController amministratorecontroller;
 	
+	
+	@GET
+	@Path("/idAdmin/{emailAdmin}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response getIdAmministratore(@PathParam("emailAdmin") String emailAdmin) {
+		Long id = amministratorecontroller.getIdAmministratore(emailAdmin);
+		return Response.ok(id).build();
+	}
+	
 	@GET
 	@Path("/itiAssociati/{idAmministratore}")
 	@Produces({MediaType.APPLICATION_JSON})

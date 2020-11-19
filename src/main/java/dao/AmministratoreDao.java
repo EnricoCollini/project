@@ -6,6 +6,7 @@ import model.Amministratore;
 
 public interface AmministratoreDao {
 	public Amministratore getAmministratore(long id);
+	public long getIdAmministratore(String emailAdmin);
 	public void createAmministratore(Amministratore admin);
 	public void deleteAmministratore(Amministratore admin);
 	public List<Long> itinerariAssociati(long idAmministratore);

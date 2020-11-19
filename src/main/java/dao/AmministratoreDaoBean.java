@@ -77,4 +77,11 @@ public class AmministratoreDaoBean implements AmministratoreDao {
 		return ress;
 	}
 
+	@Override
+	public long getIdAmministratore(String emailAdmin) {
+		Query query = entitymanager.createQuery("SELECT a.id FROM Amministratore a WHERE a.email = :emailAdmin")
+				.setParameter("emailAdmin", emailAdmin);
+		return (long) query.getSingleResult();
+	}
+
 }

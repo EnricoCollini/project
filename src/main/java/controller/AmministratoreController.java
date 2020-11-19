@@ -33,5 +33,9 @@ public class AmministratoreController {
 		return amministratoredao.areeAssociate(idAmministratore);
 	}
 	
+	public long getIdAmministratore(String emailAdmin) {
+		return amministratoredao.getIdAmministratore(emailAdmin);
+	}
+	
 	
 }
