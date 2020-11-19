@@ -15,6 +15,7 @@ public class Amministratore {
 	private long id;
 	private String email;
 	private String password;
+	private String jwt;
 	private List<Ristoro> ristori;
 	private List<StrutturaRicettiva> strutturericettive;
 	private List<PuntoInteresseGenerico> puntiinteresse;
@@ -97,6 +98,15 @@ public class Amministratore {
 
 	public void setAreenaturali(List<AreaNaturale> areenaturali) {
 		this.areenaturali = areenaturali;
+	}
+
+	@Column(name="JWT")
+	public String getJwt() {
+		return jwt;
+	}
+
+	public void setJwt(String jwt) {
+		this.jwt = jwt;
 	}
 
 

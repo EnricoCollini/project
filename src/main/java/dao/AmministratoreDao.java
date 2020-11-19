@@ -14,5 +14,6 @@ public interface AmministratoreDao {
 	public List<Long> puntiInteresseAssociati(long idAmministratore);
 	public List<Long> struttureAssociate(long idAmministratore);
 	public List<Long> areeAssociate(long idAmministratore);
+	public List<String> getJwtTokens();
 	
 }

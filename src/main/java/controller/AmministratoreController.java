@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import dao.AmministratoreDao;
+import model.Amministratore;
 
 @Stateless
 public class AmministratoreController {
@@ -37,5 +38,28 @@ public class AmministratoreController {
 		return amministratoredao.getIdAmministratore(emailAdmin);
 	}
 	
+	public boolean checkIfAuth(String jwt) {
+		System.out.println(jwt);
+		List<String> listaJWT = amministratoredao.getJwtTokens();
+		if(listaJWT.contains(jwt)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean validate(Amministratore amministratore) {
+		Long index = amministratoredao.getIdAmministratore(amministratore.getEmail());
+		if(index>0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public void setToken(long id, String jwt) {
+		Amministratore amministratore = amministratoredao.getAmministratore(id);
+		amministratore.setJwt(jwt);
+	}
 	
 }

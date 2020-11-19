@@ -84,4 +84,12 @@ public class AmministratoreDaoBean implements AmministratoreDao {
 		return (long) query.getSingleResult();
 	}
 
+	@Override
+	public List<String> getJwtTokens() {
+		Query query2 = entitymanager.createQuery("SELECT a.jwt FROM Amministratore a");
+		List<String> ress = query2.getResultList();
+		return ress;
+	}
+
+
 }

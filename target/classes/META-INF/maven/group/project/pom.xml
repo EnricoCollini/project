@@ -35,10 +35,7 @@
 			<artifactId>javatuples</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- <dependency> <groupId>com.google.code.gson</groupId> <artifactId>gson</artifactId> 
-			<version>2.6.2</version> </dependency> -->
-		<!-- <dependency> <groupId>it.unifi.oris</groupId> <artifactId>sirio</artifactId> 
-			<version>1.1.0</version> </dependency> -->
+
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
@@ -107,6 +104,13 @@
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.1.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+		<dependency>
+    		<groupId>io.jsonwebtoken</groupId>
+    		<artifactId>jjwt</artifactId>
+    		<version>0.9.1</version>
+		</dependency>
+		
 		<!-- <dependency> <groupId>org.jboss.resteasy</groupId> <artifactId>resteasy-multipart-provider</artifactId> 
 			<version>3.6.1.Final</version> </dependency> -->
 	</dependencies>
