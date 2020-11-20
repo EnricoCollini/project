@@ -17,6 +17,7 @@ import controller.PuntoInteresseGenericoController;
 import dto.PuntoInteresseGenericoDTO;
 import dto.RistoroDTO;
 import model.PuntoInteresseGenerico;
+import rest.Secured;
 
 @Path("/puntointeressegenerico")
 public class PuntoInteresseGenericoServiceEndpoint {
@@ -43,6 +44,7 @@ public class PuntoInteresseGenericoServiceEndpoint {
 	
 	//Create
 	@POST
+	@Secured
   	@Path("/create")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -53,6 +55,7 @@ public class PuntoInteresseGenericoServiceEndpoint {
 	
 	//Update
 	@PUT
+	@Secured
     @Path("/update/id/{id}")
     public Response update(@PathParam("id") long id, PuntoInteresseGenerico puntointeressegenerico) {
 		puntointeressecontroller.updatePuntoInteresseGenerico(id, puntointeressegenerico);
@@ -61,6 +64,7 @@ public class PuntoInteresseGenericoServiceEndpoint {
   	
     //Delete
     @GET
+    @Secured
     @Path("/delete/id/{id}")
     public Response delete(@PathParam("id") long id) {
     	puntointeressecontroller.deletePuntoInteresseGenerico(id);
@@ -68,6 +72,7 @@ public class PuntoInteresseGenericoServiceEndpoint {
     }
     
     @GET
+    @Secured
  	@Path("/associaArea/{idPunto}/{idArea}")
  	public Response associaArea(@PathParam("idPunto") long idPunto, @PathParam("idArea") long idArea) {
  		puntointeressecontroller.associaArea(idPunto, idArea);
@@ -80,6 +85,7 @@ public class PuntoInteresseGenericoServiceEndpoint {
  	}
     
     @GET
+    @Secured
  	@Path("/associaIti/{idPunto}/{idIti}")
  	public Response associaIti(@PathParam("idPunto") long idPunto, @PathParam("idIti") long idIti) {
  		puntointeressecontroller.associaIti(idPunto, idIti);
@@ -101,6 +107,7 @@ public class PuntoInteresseGenericoServiceEndpoint {
 	}
     
  	@GET
+ 	@Secured
  	@Path("/associaAmministratore/{idPunto}/{idAmministratore}")
  	public Response associaAmministratore(@PathParam("idPunto") long idPunto, @PathParam("idAmministratore") long idAmministratore) {
  		puntointeressecontroller.associaAmministratore(idPunto, idAmministratore);

@@ -11,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import controller.AmministratoreController;
+import rest.Secured;
 
 @Path("/amministratore")
 public class AmministratoreRestServicesEndpoint {
@@ -20,6 +21,7 @@ public class AmministratoreRestServicesEndpoint {
 	
 	
 	@GET
+	@Secured
 	@Path("/idAdmin/{emailAdmin}")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response getIdAmministratore(@PathParam("emailAdmin") String emailAdmin) {
@@ -28,6 +30,7 @@ public class AmministratoreRestServicesEndpoint {
 	}
 	
 	@GET
+	@Secured
 	@Path("/itiAssociati/{idAmministratore}")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response itiAssociati(@PathParam("idAmministratore") long idAmministratore) {
@@ -37,6 +40,7 @@ public class AmministratoreRestServicesEndpoint {
 	}
     
     @GET
+    @Secured
    	@Path("/ristoAssociati/{idAmministratore}")
    	@Produces({MediaType.APPLICATION_JSON})
    	public Response ristoAssociati(@PathParam("idAmministratore") long idAmministratore) {
@@ -46,6 +50,7 @@ public class AmministratoreRestServicesEndpoint {
    	}
     
     @GET
+    @Secured
    	@Path("/puntiAssociati/{idAmministratore}")
    	@Produces({MediaType.APPLICATION_JSON})
    	public Response puntiAssociati(@PathParam("idAmministratore") long idAmministratore) {
@@ -55,6 +60,7 @@ public class AmministratoreRestServicesEndpoint {
    	}
     
     @GET
+    @Secured
    	@Path("/struttureAssociati/{idAmministratore}")
    	@Produces({MediaType.APPLICATION_JSON})
    	public Response struttureAssociati(@PathParam("idAmministratore") long idAmministratore) {
@@ -64,6 +70,7 @@ public class AmministratoreRestServicesEndpoint {
    	}
     
     @GET
+    @Secured
    	@Path("/areeAssociate/{idAmministratore}")
    	@Produces({MediaType.APPLICATION_JSON})
    	public Response areeAssociate(@PathParam("idAmministratore") long idAmministratore) {

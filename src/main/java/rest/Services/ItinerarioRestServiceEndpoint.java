@@ -21,6 +21,7 @@ import dto.ItinerarioDTO;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.StrutturaRicettiva;
+import rest.Secured;
 
 
 @Path("/itinerario")
@@ -51,6 +52,7 @@ public class ItinerarioRestServiceEndpoint {
 	}
 	  	
 	@POST
+	@Secured
 	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -61,6 +63,7 @@ public class ItinerarioRestServiceEndpoint {
 	  	
 	
 	@PUT
+	@Secured
 	@Path("/update/id/{id}")
 	public Response update(@PathParam("id") long id, Itinerario itinerario) {
 		itinerariocontroller.updateItinerario(id, itinerario);
@@ -69,6 +72,7 @@ public class ItinerarioRestServiceEndpoint {
 	  	
 		    
 	@GET
+	@Secured
 	@Path("/delete/id/{id}")
 	public Response delete(@PathParam("id") long id) {
 		itinerariocontroller.deleteItinerario(id);
@@ -76,6 +80,7 @@ public class ItinerarioRestServiceEndpoint {
 	}
 	
 	@GET
+	@Secured
  	@Path("/associaArea/{idIti}/{idArea}")
  	public Response associaArea(@PathParam("idIti") long idIti, @PathParam("idArea") long idArea) {
  		itinerariocontroller.associaArea(idIti, idArea);
@@ -124,6 +129,7 @@ public class ItinerarioRestServiceEndpoint {
 	}
 	
  	@GET
+ 	@Secured
  	@Path("/associaAmministratore/{idIti}/{idAmministratore}")
  	public Response associaAmministratore(@PathParam("idIti") long idIti, @PathParam("idAmministratore") long idAmministratore) {
  		itinerariocontroller.associaAmministratore(idIti, idAmministratore);

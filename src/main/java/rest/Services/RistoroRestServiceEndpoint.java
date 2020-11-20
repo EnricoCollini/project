@@ -17,6 +17,7 @@ import javax.ws.rs.core.Response;
 import model.AreaNaturale;
 import model.Itinerario;
 import model.Ristoro;
+import rest.Secured;
 import controller.AreaNaturaleController;
 import controller.RistoroController;
 import dto.RistoroDTO;
@@ -50,6 +51,7 @@ public class RistoroRestServiceEndpoint {
 	}
 	  	
 	@POST
+	@Secured
 	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -59,6 +61,7 @@ public class RistoroRestServiceEndpoint {
     }
 	  	
  	@PUT
+ 	@Secured
     @Path("/update/id/{id}")
     public Response update(@PathParam("id") long id, Ristoro ristoro) {
  		ristorocontroller.updateRistoro(id,ristoro);
@@ -67,6 +70,7 @@ public class RistoroRestServiceEndpoint {
 	  	
 	    
  	@GET
+ 	@Secured
 	@Path("/delete/id/{id}")
 	public Response delete(@PathParam("id") long id) {
 	 	ristorocontroller.deleteRistoro(id);
@@ -74,6 +78,7 @@ public class RistoroRestServiceEndpoint {
 	}
  	
  	@GET
+ 	@Secured
  	@Path("/associaArea/{idRisto}/{idArea}")
  	public Response associaArea(@PathParam("idRisto") long idRisto, @PathParam("idArea") long idArea) {
  		ristorocontroller.associaArea(idRisto, idArea);
@@ -86,6 +91,7 @@ public class RistoroRestServiceEndpoint {
  	}
  	
  	@GET
+ 	@Secured
  	@Path("/associaIti/{idRisto}/{idIti}")
  	public Response associaIti(@PathParam("idRisto") long idRisto, @PathParam("idIti") long idIti) {
  		ristorocontroller.associaIti(idRisto, idIti);
@@ -98,6 +104,7 @@ public class RistoroRestServiceEndpoint {
  	}
  	
  	@GET
+ 	@Secured
  	@Path("/associaAmministratore/{idRisto}/{idAmministratore}")
  	public Response associaAmministratore(@PathParam("idRisto") long idRisto, @PathParam("idAmministratore") long idAmministratore) {
  		ristorocontroller.associaAmministratore(idRisto, idAmministratore);

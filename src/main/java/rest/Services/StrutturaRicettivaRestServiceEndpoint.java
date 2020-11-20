@@ -20,6 +20,7 @@ import controller.StrutturaRicettivaController;
 import dto.StrutturaRicettivaDTO;
 import model.Ristoro;
 import model.StrutturaRicettiva;
+import rest.Secured;
 
 @Path("strutturaricettiva")
 public class StrutturaRicettivaRestServiceEndpoint {
@@ -49,6 +50,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
 	  	
 	@POST
+	@Secured
 	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -58,6 +60,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
     }
 	  	
  	@PUT
+ 	@Secured
     @Path("/update/id/{id}")
     public Response update(@PathParam("id") long id, StrutturaRicettiva strutturaricettiva) {
  		strutturaricettivacontroller.updateStrutturaRicettiva(id,strutturaricettiva);
@@ -66,6 +69,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	  	
 	    
  	@GET
+ 	@Secured
 	@Path("/delete/id/{id}")
 	public Response delete(@PathParam("id") long id) {
 		strutturaricettivacontroller.deleteStrutturaRicettiva(id);
@@ -85,6 +89,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
  	}
  	
  	@GET
+ 	@Secured
  	@Path("/associaIti/{idStru}/{idIti}")
  	public Response associaIti(@PathParam("idStru") long idStru, @PathParam("idIti") long idIti) {
  		strutturaricettivacontroller.associaIti(idStru, idIti);
@@ -106,6 +111,7 @@ public class StrutturaRicettivaRestServiceEndpoint {
 	}
     
  	@GET
+ 	@Secured
  	@Path("/associaAmministratore/{idStru}/{idAmministratore}")
  	public Response associaAmministratore(@PathParam("idStru") long idStru, @PathParam("idAmministratore") long idAmministratore) {
  		strutturaricettivacontroller.associaAmministratore(idStru, idAmministratore);

@@ -19,6 +19,7 @@ import javax.ws.rs.core.Response;
 import org.json.JSONObject;
 
 import model.AreaNaturale;
+import rest.Secured;
 import controller.AreaNaturaleController;
 import dto.AreaNaturaleDTO;
 
@@ -31,6 +32,7 @@ public class AreaNaturaleRestServiceEndpoint {
 	
 	//test hello world example
 	@GET
+	@Secured
 	@Path("/create")
 	@Produces({MediaType.TEXT_PLAIN})
 	public UUID sayHello() {
@@ -55,6 +57,7 @@ public class AreaNaturaleRestServiceEndpoint {
   	}
   	
   	@POST
+  	@Secured
   	@Path("/create")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -64,6 +67,7 @@ public class AreaNaturaleRestServiceEndpoint {
     }
   	
   	@PUT
+  	@Secured
     @Path("/update/id/{id}")
     public Response update(@PathParam("id") long id, AreaNaturale areanaturale) {
     	areanaturalecontroller.updateAreaNaturale(id ,areanaturale);
@@ -72,6 +76,7 @@ public class AreaNaturaleRestServiceEndpoint {
   	
     
     @GET
+    @Secured
     @Path("/delete/id/{id}")
     public Response delete(@PathParam("id") long id) {
     	areanaturalecontroller.deleteAreaNaturale(id);
@@ -117,6 +122,7 @@ public class AreaNaturaleRestServiceEndpoint {
     
     
  	@GET
+ 	@Secured
  	@Path("/associaAmministratore/{idArea}/{idAmministratore}")
  	public Response associaAmministratore(@PathParam("idArea") long idArea, @PathParam("idAmministratore") long idAmministratore) {
  		areanaturalecontroller.associaAmministratore(idArea, idAmministratore);
