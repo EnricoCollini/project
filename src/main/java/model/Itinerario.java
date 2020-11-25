@@ -167,7 +167,7 @@ public class Itinerario {
 		this.image = image;
 	}
 
-	@Column(name="TRACK" ,columnDefinition="VARCHAR(4000)")
+	@Column(name="TRACK" ,columnDefinition="VARCHAR(40000)")
 	public String getTrack() {
 		return track;
 	}

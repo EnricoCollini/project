@@ -8,8 +8,6 @@ import java.lang.annotation.ElementType;
 
 import javax.ws.rs.NameBinding;
 
-
-
 @NameBinding
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(value = RetentionPolicy.RUNTIME)
